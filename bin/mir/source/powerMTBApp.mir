@@ -1,0 +1,58 @@
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 5; ]
+class powerMTBApp extends Application.AppBase{
+    [ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 7; @position = 15; ]
+    protected
+    var _powerMTBView;
+    [ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 9; ]
+    function initialize() as Void {
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_9_26_start:
+[ "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc" 10 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc" 11 8 ]
+        %tmp.7 = getv ? :powerMTBView;
+        %tmp.9 = lgetv %self;
+        %tmp.4 = newc %tmp.7 (%tmp.9);
+        putv self :_powerMTBView %tmp.4;
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_9_26_stop:
+    }
+    [ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 15; ]
+    function getInitialView() {
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_15_30_start:
+[ "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc" 16 8 ]
+        %tmp.1 = newa 1;
+        %tmp.3 = getv ? :_powerMTBView;
+        %tmp.4 = dup %tmp.1;
+        %tmp.5 = aputv %tmp.4 0 %tmp.3;
+        ret %tmp.5;
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_15_30_stop:
+    }
+}
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 21; ]
+function getApp() as powerMTBApp {
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_21_33_start:
+[ "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc" 22 4 ]
+    %tmp.1 = getm $.Toybox.Application;
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 powerMTBApp;
+    ret %tmp.4;
+_Users_Smon_Documents_Garmin_powerMTB_source_powerMTBApp_mc_21_33_stop:
+}
+[ @file = "/Users/Smon/Documents/Garmin/powerMTB/source/powerMTBApp.mc"; @line = 1; ]
+<init> {
+}
