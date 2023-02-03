@@ -1,4 +1,4 @@
-# powerM
+# PowerMTB 
 
 ## TRAIN BY WATTS
 
