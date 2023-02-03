@@ -1,4 +1,4 @@
-# PowerMTB 
+# PowerMTB SimpleDataField for Edge130
 
 ## TRAIN BY WATTS
 
@@ -12,7 +12,8 @@ I compared the watt calculation with a roller trainer and Zwift, where I calcula
 The biggest problem at the moment is that I can't include the wind force (headwind) in my calculations. 
 There are devices on the market that integrate such values using sensors, which the Edge unfortunately does not provide.
 
-## Fit File Simulation from Zwift Roller Trainer
+## Garmin Edge Screenshot
+
 
 ![Screenshot](readme.png)
 
