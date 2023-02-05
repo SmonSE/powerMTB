@@ -25,7 +25,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var airDensity       as Numeric;
     hidden var rollingDrag      as Numeric;
     hidden var ground           as Numeric;
-    hidden var distance           as Numeric;
+    hidden var distance         as Numeric;
 
     var startWatt = false;                              // Set Watt value at the beginning to avoid empty data field
     var start = false;                                  // Set StartPresure once at the beginning
@@ -210,6 +210,9 @@ class powerMTBView extends WatchUi.SimpleDataField {
         if(info has :elapsedDistance){
             if(info.elapsedDistance != null){
                 mValue = info.elapsedDistance as Number / 1000;
+                var mVal = mValue.format("%.3f");
+                mValue = mVal.toDouble();
+                //Sys.println("DEBUG: mValue(2) :" + mValue + "  " + mVal); 
             } else {
                 mValue = 0.00f;
             }
@@ -227,6 +230,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
                 dValue = info.ambientPressure as Number; 
                 dValue = dValue.toFloat() * 0.0001;
+                //Sys.println("DEBUG: dValue() :" + dValue); 
                 
                 var checkMValue = mValue.toDouble();
                 var checkNewDistance = newDistance.toDouble();
