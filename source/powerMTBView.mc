@@ -43,8 +43,9 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var k = 0;                                          // Steigung in %
     
     var startPressure = 0;
-    var totalPressureUp = 0;
     var paMeter = 0;
+    var climbP = 0;
+    var climbM = 0;
     var calcPressure = 0;
 
     var powerTotal = 0;
@@ -173,13 +174,13 @@ class powerMTBView extends WatchUi.SimpleDataField {
         }
     
     // Create the custom FIT data field we want to record.
-    fitField1 = SimpleDataField.createField("watt_time", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"w", :nativeNum => 7});
+    fitField1 = SimpleDataField.createField("watt_time", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt/time", :nativeNum => 7});
     fitField1.setData(0); 
 
-    fitField2 = SimpleDataField.createField("watt_kg", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt/kg"});
+    fitField2 = SimpleDataField.createField("climb_percent", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%/time"});
     fitField2.setData(0);
 
-    fitField3 = SimpleDataField.createField("watt_average", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt/average"});
+    fitField3 = SimpleDataField.createField("climb_meter", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"m/time"});
     fitField3.setData(0);  
 
     //Sys.println("DEBUG: Properties ( riderWeight     ): " + weightRider);
@@ -244,7 +245,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             calcPressure = dValue - startPressure;
                             paMeter = calcPressure * 8.0;                             
                             paMeter = (paMeter * 100);             
-                            totalPressureUp += paMeter;      
+                            climbM += paMeter;      
                             startPressure = dValue;                                              
                             dValue = paMeter;
                             //Sys.println("DEBUG: paMeter( up ) :" + paMeter);
@@ -257,8 +258,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             calcPressure = dValue - startPressure;
                             paMeter = calcPressure * 8.0;                 
                             paMeter = (paMeter * 100);
-                            //totalPressureUp += paMeter;                   // if Up it will count back to 0  
-                            //totalPressureDown += paMeter;                 // if Down it will count Down
+                            climbM += paMeter;
                             startPressure = dValue;  
                             dValue = paMeter;
                             //Sys.println("DEBUG: paMeter( down ) :" + paMeter);
@@ -266,7 +266,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             // k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
-                            //Sys.println("DEBUG: steigung( down% ) :" + k);
+                            //Sys.println("DEBUG: Climb( down% ) :" + k);
                         } 
                     }  
                 } 
@@ -310,10 +310,17 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         // Watt / KG
                         kgValue = powerAverage / weightRider;
 
+                        climbP = k * (-1);
+                        climbM = climbM * (-1);
+
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
-                        fitField2.setData(kgValue.toNumber()); 
-                        fitField3.setData(avValue.toNumber());
+                        fitField2.setData(climbP.toNumber()); 
+                        fitField3.setData(climbM.toNumber());
+
+                        //Sys.println("DEBUG: Watt ( w ): " + wValue);
+                        //Sys.println("DEBUG: Climb( % ): " + climbP);
+                        //Sys.println("DEBUG: Climb( m ): " + climbM);
                     }
                 }
             } else {
