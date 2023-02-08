@@ -26,6 +26,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var rollingDrag      as Numeric;
     hidden var ground           as Numeric;
     hidden var distance         as Numeric;
+    hidden var version          as Numeric;
 
     var startWatt = false;                              // Set Watt value at the beginning to avoid empty data field
     var start = false;                                  // Set StartPresure once at the beginning
@@ -73,13 +74,14 @@ class powerMTBView extends WatchUi.SimpleDataField {
         asValue = 0.00f;
         kgValue = 0.00f;
 
-        weightRider = app.getProperty("riderWeight_prop").toFloat();
+        weightRider = app.getProperty("riderWeight_prop").toFloat();      // Weight Rider
         bikeEquipWeight = app.getProperty("bike_Equip_Weight").toFloat(); // Weight =  Bike + Equipment
         cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient Cw*A [m2], CdA = drag area -> Trainer: 0.25, MTB: 0.525, Road: 0.28, 
         airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 -> API: 3.2.0 weather can be calculated .. not for edge 130 :(
         rollingDrag = app.getProperty("rollingDrag_prop").toNumber();     // Rolling friction coefficient cr of the tire/ Trainer: 0.004, Race: 0.006, Tour: 0.008, Enduro: 0.009
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor: Trainer, Asphalt, Schotterweg, Waldweg
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
+        version = app.getProperty("appVersion").toNumber();               // Update App Version
 
         switch ( cdA ) {
             case 1: {
