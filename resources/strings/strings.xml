@@ -17,9 +17,9 @@
     <string id="riderWeight_title">Fahrer Gewicht</string>
     <!--                                            -->
     <string id="drag_title">Luftreibungzahl Cw*A [m2]</string>
-    <string id="drag_1">XC/CrossCountry: 0.25</string>
-    <string id="drag_2">DownCountry: 0.28</string>
-    <string id="drag_3">All-Mountain: 0.45</string>
+    <string id="drag_1">XC/CrossCountry: 0.28</string>
+    <string id="drag_2">DownCountry: 0.32</string>
+    <string id="drag_3">All-Mountain: 0.42</string>
     <string id="drag_4">Enduro: 0.53</string>
      <!--                                            -->   
     <string id="rollingDrag_title">Rollreibungszahl cr Reifen</string>

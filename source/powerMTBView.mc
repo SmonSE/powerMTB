@@ -179,13 +179,13 @@ class powerMTBView extends WatchUi.SimpleDataField {
         }
     
     // Create the custom FIT data field we want to record.
-    fitField1 = SimpleDataField.createField("watt_time", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt/time", :nativeNum => 7});
+    fitField1 = SimpleDataField.createField("watt_time", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt", :nativeNum => 20});
     fitField1.setData(0); 
 
-    fitField2 = SimpleDataField.createField("climb_percent", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%/time"});
+    fitField2 = SimpleDataField.createField("watt_average", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt"});
     fitField2.setData(0);
 
-    fitField3 = SimpleDataField.createField("climb_meter", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"m/time"});
+    fitField3 = SimpleDataField.createField("climb_percent", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"meter"});
     fitField3.setData(0);  
     }
 
@@ -249,6 +249,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             // k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
+                            Sys.println("DEBUG: climb(%) :" + k); 
+
 
                         } else {
                             calcPressure = dValue - startPressure;
@@ -259,8 +261,11 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             dValue = paMeter;
 
                             // k = (h/a) * 100 
-                            k = (paMeter/distance) * 100;
-                            k = k * (-1);
+                            //k = (paMeter/distance) * 100;
+                            //k = k * (-1);
+                            k = 0.1;                                  // Pc = climb resistance
+                            Sys.println("DEBUG: climb(%) :" + k);  
+
                         } 
                     }  
                 } 
@@ -277,7 +282,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                     // Pr = C1 * m * g * v 
                     Pr = rollingDrag * weightOverall * g * (sValue/3.6);
                     // Pa = 0.5 * p * cdA * v * (v-vw)2 or -> Pa = 0.5 * p * (cdA * ground) * v * (v-vw)2
-                    Pa = 0.5 * airDensity * (cdA * ground) * (sValue/3.6) * ((sValue/3.6) * (sValue/3.6));
+                    Pa = 0.5 * airDensity * (cdA * ground) * (sValue/3.6) * (sValue/3.6) * (sValue/3.6);
                     // Pc = (k/100) * m * g * v
                     Pc = (k/100) * weightOverall * g * (sValue/3.6);
                     // Pm = (Pr + Pa + Pc) * 0.025
@@ -287,27 +292,26 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
                     if (sValue > 0 && updateStatus == true) { 
 
-                        if (powerTotal > 0) {
-                            wValue = powerTotal;
-                        } else {
-                            wValue = 0;
-                        }
-
-                        // Watt Average
-                        powerOverall += powerTotal;
+                        wValue = powerTotal;
                         powerCount += 1;
+
+                        powerOverall += powerTotal;                         // Watt Average
                         powerAverage = powerOverall / powerCount;
                         avValue = powerAverage;
 
-                        // Watt / KG
-                        kgValue = powerAverage / weightRider;
-
+                        kgValue = powerAverage / weightRider;               // Watt / KG
+                    
                         // The IQ grafik should not get into negativ value 
                         if (k < 0){
                             climbP = k * (-1);
                         } else {
                             climbP = k;
                         }
+
+                        // To avoid negativ values in chart
+                        if (avValue < 0) {
+                            avValue = 0;
+                        } 
 
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
