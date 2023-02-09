@@ -46,7 +46,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var startPressure = 0;
     var paMeter = 0;
     var climbP = 0;
-    var climbM = 0;
     var calcPressure = 0;
 
     var powerTotal = 0;
@@ -241,8 +240,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         if (dValue >= startPressure) {
                             calcPressure = dValue - startPressure;
                             paMeter = calcPressure * 8.0;                             
-                            paMeter = (paMeter * 100);             
-                            climbM += paMeter;      
+                            paMeter = (paMeter * 100);                 
                             startPressure = dValue;                                              
                             dValue = paMeter;
 
@@ -251,19 +249,16 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             k = k * (-1);
                             Sys.println("DEBUG: climb(%) :" + k); 
 
-
                         } else {
                             calcPressure = dValue - startPressure;
                             paMeter = calcPressure * 8.0;                 
                             paMeter = (paMeter * 100);
-                            climbM += paMeter;
                             startPressure = dValue;  
                             dValue = paMeter;
 
-                            // k = (h/a) * 100 
-                            //k = (paMeter/distance) * 100;
-                            //k = k * (-1);
-                            k = 0.1;                                  // Pc = climb resistance
+                            //k = (h/a) * 100 
+                            k = (paMeter/distance) * 100;
+                            k = k * (-1);
                             Sys.println("DEBUG: climb(%) :" + k);  
 
                         } 
@@ -292,15 +287,19 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
                     if (sValue > 0 && updateStatus == true) { 
 
-                        wValue = powerTotal;
-                        powerCount += 1;
+                        if (powerTotal > 0) {                                   // no negativ Watt values
+                            wValue = powerTotal;
+                            powerCount += 1;
 
-                        powerOverall += powerTotal;                         // Watt Average
-                        powerAverage = powerOverall / powerCount;
-                        avValue = powerAverage;
+                            powerOverall += powerTotal;                         // Watt Average
+                            powerAverage = powerOverall / powerCount;
+                            avValue = powerAverage;
 
-                        kgValue = powerAverage / weightRider;               // Watt / KG
-                    
+                            kgValue = powerAverage / weightRider;               // Watt / KG
+                        } else {
+                            wValue = 0;
+                        }
+ 
                         // The IQ grafik should not get into negativ value 
                         if (k < 0){
                             climbP = k * (-1);
@@ -308,18 +307,13 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             climbP = k;
                         }
 
-                        // To avoid negativ values in chart
-                        if (avValue < 0) {
-                            avValue = 0;
-                        } 
-
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
                         fitField2.setData(avValue.toNumber());
                         fitField3.setData(climbP.toNumber()); 
 
                         Sys.println("DEBUG: Watt ( w ): " + wValue);
-                        Sys.println("DEBUG: Watt%( m ): " + avValue);
+                        Sys.println("DEBUG: Watt ( Ø ): " + avValue);
                         Sys.println("DEBUG: Climb( % ): " + climbP);
 
                     }
