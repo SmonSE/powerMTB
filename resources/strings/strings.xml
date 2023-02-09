@@ -8,9 +8,9 @@
     <string id="climbP_graph_label">Climb in %/time</string>
     <string id="climbP_units">t</string>
     <!--                                            -->
-    <string id="climbM_label">m</string>
-    <string id="climbM_graph_label">Climb in m/time</string>
-    <string id="climbM_units">t</string>
+    <string id="avValue_label">w/Ø</string>
+    <string id="avValue_graph_label">Climb in watt Ø/time</string>
+    <string id="avValue_units">t</string>
     <!--                                            -->
     <string id="bike_Equip_Weight_title">Bike/Ausrüstung Gewicht</string>
     <string id="airDensity_title">Luftdichte</string>

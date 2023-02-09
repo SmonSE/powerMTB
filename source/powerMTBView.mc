@@ -62,7 +62,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-        label = "Watt";
+        label = "Watt Ø";
 
         sValue  = 0.00f;
         mValue  = 0.00f;
@@ -82,6 +82,9 @@ class powerMTBView extends WatchUi.SimpleDataField {
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor: Trainer, Asphalt, Schotterweg, Waldweg
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
         version = app.getProperty("appVersion").toNumber();               // Update App Version
+
+        // Weight of driver and equipment
+        weightOverall = weightRider + bikeEquipWeight;
 
         switch ( cdA ) {
             case 1: {
@@ -184,14 +187,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
     fitField3 = SimpleDataField.createField("climb_meter", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"m/time"});
     fitField3.setData(0);  
-
-    //Sys.println("DEBUG: Properties ( riderWeight     ): " + weightRider);
-    //Sys.println("DEBUG: Properties ( bikeEquipWeight ): " + bikeEquipWeight);
-    //Sys.println("DEBUG: Properties ( cdA             ): " + cdA);
-    //Sys.println("DEBUG: Properties ( airDensity      ): " + airDensity);
-    //Sys.println("DEBUG: Properties ( rolling drag    ): " + rollingDrag);
-    //Sys.println("DEBUG: Properties ( ground          ): " + ground);
-
     }
 
     // The given info object contains all the current workout
@@ -250,12 +245,11 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             climbM += paMeter;      
                             startPressure = dValue;                                              
                             dValue = paMeter;
-                            //Sys.println("DEBUG: paMeter( up ) :" + paMeter);
 
                             // k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
-                            //Sys.println("DEBUG: steigung( up% ) :" + k);
+
                         } else {
                             calcPressure = dValue - startPressure;
                             paMeter = calcPressure * 8.0;                 
@@ -263,12 +257,10 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             climbM += paMeter;
                             startPressure = dValue;  
                             dValue = paMeter;
-                            //Sys.println("DEBUG: paMeter( down ) :" + paMeter);
 
                             // k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
-                            //Sys.println("DEBUG: Climb( down% ) :" + k);
                         } 
                     }  
                 } 
@@ -281,8 +273,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
         if(info has :currentSpeed){
             if(info.currentSpeed != null){
                 if (updateStatus == true) {
-                    // Weight of driver and equipment
-                    weightOverall = weightRider + bikeEquipWeight;
 
                     // Pr = C1 * m * g * v 
                     Pr = rollingDrag * weightOverall * g * (sValue/3.6);
@@ -312,17 +302,22 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         // Watt / KG
                         kgValue = powerAverage / weightRider;
 
-                        climbP = k * (-1);
-                        climbM = climbM * (-1);
+                        // The IQ grafik should not get into negativ value 
+                        if (k < 0){
+                            climbP = k * (-1);
+                        } else {
+                            climbP = k;
+                        }
 
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
-                        fitField2.setData(climbP.toNumber()); 
-                        fitField3.setData(climbM.toNumber());
+                        fitField2.setData(avValue.toNumber());
+                        fitField3.setData(climbP.toNumber()); 
 
-                        //Sys.println("DEBUG: Watt ( w ): " + wValue);
-                        //Sys.println("DEBUG: Climb( % ): " + climbP);
-                        //Sys.println("DEBUG: Climb( m ): " + climbM);
+                        Sys.println("DEBUG: Watt ( w ): " + wValue);
+                        Sys.println("DEBUG: Watt%( m ): " + avValue);
+                        Sys.println("DEBUG: Climb( % ): " + climbP);
+
                     }
                 }
             } else {
@@ -332,7 +327,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
         updateStatus = false;
 
-        var retVal = wValue.format("%d");
+        var retVal = avValue.format("%d");      // now Average Watt is shown on display
         var retValNb = retVal.toNumber();
         //Sys.println("DEBUG: retVal() :" + retVal); 
 
