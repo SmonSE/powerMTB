@@ -301,20 +301,22 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         }
  
                         // The IQ grafik should not get into negativ value 
+                        /*
                         if (k < 0){
                             climbP = k * (-1);
                         } else {
                             climbP = k;
                         }
+                        */
 
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
                         fitField2.setData(avValue.toNumber());
                         fitField3.setData(climbP.toNumber()); 
 
-                        Sys.println("DEBUG: Watt ( w ): " + wValue);
-                        Sys.println("DEBUG: Watt ( Ø ): " + avValue);
-                        Sys.println("DEBUG: Climb( % ): " + climbP);
+                        //Sys.println("DEBUG: Watt ( w ): " + wValue);
+                        //Sys.println("DEBUG: Watt ( Ø ): " + avValue);
+                        //Sys.println("DEBUG: Climb( % ): " + climbP);
 
                     }
                 }
