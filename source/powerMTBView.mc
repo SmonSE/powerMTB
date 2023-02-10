@@ -80,7 +80,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
         rollingDrag = app.getProperty("rollingDrag_prop").toNumber();     // Rolling friction coefficient cr of the tire/ Trainer: 0.004, Race: 0.006, Tour: 0.008, Enduro: 0.009
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor: Trainer, Asphalt, Schotterweg, Waldweg
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
-        version = app.getProperty("appVersion").toNumber();               // Update App Version
+        version = app.getProperty("appVersion").toString();               // Update App Version
 
         // Weight of driver and equipment
         weightOverall = weightRider + bikeEquipWeight;
