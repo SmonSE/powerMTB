@@ -24,27 +24,27 @@ There are devices on the market that integrate such values using sensors, which 
 
 #### CrossCountry/Marathon
 
-- Continental Race King:    &nbsp;       Crr = 15,5W  <br />
-- Schwalbe Rocket Ron:      &nbsp;       Crr = 16,9W  <br />
-- Vittoria Mezcal:          &nbsp;       Crr = 19,3W  <br />
-- Schwalbe Racing Ralph:    &nbsp;       Crr = 19,8W  <br />
-- Vee Tire Rail Tracker:    &nbsp;       Crr = 24,7W  <br />
-- Maxxis Ikon:              &nbsp;       Crr = 27,8W  <br />
-- Onza Canis:               &nbsp;       Crr = 29,3W  <br />
-- Maxxis Crossmax Pulse:    &nbsp;       Crr = 31,7W  <br />
+- Continental Race King:    &nbsp;  Crr = 15,5W  <br />
+- Schwalbe Rocket Ron:      &ensp;  &nbsp;  Crr = 16,9W  <br />
+- Vittoria Mezcal:          &ensp;  &nbsp;  &nbsp;  Crr = 19,3W  <br />
+- Schwalbe Racing Ralph:    &nbsp;  Crr = 19,8W  <br />
+- Vee Tire Rail Tracker:    &nbsp;  Crr = 24,7W  <br />
+- Maxxis Ikon:              &ensp;  &nbsp;  &nbsp;  Crr = 27,8W  <br />
+- Onza Canis:               &nbsp;  &ensp;  &nbsp;  &nbsp;  Crr = 29,3W  <br />
+- Maxxis Crossmax Pulse:    &nbsp;  Crr = 31,7W  <br />
 
 #### All Mountain
 
-- Schwalbe Nobby Nic Pace Start:   Crr = 19,8W  <br />
-- Schwalbe Fat Albert Rear:        Crr = 20,5W  <br />
-- Vredestein Black Panther:        Crr = 22,3W  <br />
-- WTB Trail Boss Fast Rolling:     Crr = 25,3W  <br />
-- Vredestein Black Panther Xtreme: Crr = 25,4W  <br />
-- Maxxis Ardent:                   Crr = 27,5W  <br />
-- Continental Mountain King:       Crr = 29,8W  <br />
-- WTB Trail Boss High Grip:        Crr = 39,3W  <br />
-- Schwalbe Nobby Nic Trail Star:   Crr = 39,7W  <br />
-- Schwalbe Fat Albert Front:       Crr = 40,0W  <br />
+- Schwalbe Nobby Nic Pace Start:   &nbsp; Crr = 19,8W  <br />
+- Schwalbe Fat Albert Rear:        &nbsp; Crr = 20,5W  <br />
+- Vredestein Black Panther:        &nbsp; Crr = 22,3W  <br />
+- WTB Trail Boss Fast Rolling:     &nbsp; Crr = 25,3W  <br />
+- Vredestein Black Panther Xtreme: &nbsp; Crr = 25,4W  <br />
+- Maxxis Ardent:                   &nbsp; Crr = 27,5W  <br />
+- Continental Mountain King:       &nbsp; Crr = 29,8W  <br />
+- WTB Trail Boss High Grip:        &nbsp; Crr = 39,3W  <br />
+- Schwalbe Nobby Nic Trail Star:   &nbsp; Crr = 39,7W  <br />
+- Schwalbe Fat Albert Front:       &nbsp; Crr = 40,0W  <br />
 
 #### Enduro
 
