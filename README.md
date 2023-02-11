@@ -20,85 +20,55 @@ There are devices on the market that integrate such values using sensors, which 
 
 ## Rolling Resistance Tires:
 
+#### CrossCountry/Marathon
 
-######CrossCountry/Marathon
+  Continental Race King:           Crr = 15,5W => 0.0031 <br />
+  Schwalbe Rocket Ron:             Crr = 16,9W => 0.0034 <br />
+  Vittoria Mezcal:                 Crr = 19,3W => 0.0039 <br />
+  Schwalbe Racing Ralph:           Crr = 19,8W => 0.0040 <br />
+  Vee Tire Rail Tracker:           Crr = 24,7W => 0.0050 <br />
+  Maxxis Ikon:                     Crr = 27,8W => 0.0056 <br />
+  Onza Canis:                      Crr = 29,3W => 0.0059 <br />
+  Maxxis Crossmax Pulse:           Crr = 31,7W => 0.0064 <br />
 
-  Continental Race King:           Crr = 15,5W => 0.0031
-  
-  Schwalbe Rocket Ron:             Crr = 16,9W => 0.0034
-  
-  Vittoria Mezcal:                 Crr = 19,3W => 0.0039
-  
-  Schwalbe Racing Ralph:           Crr = 19,8W => 0.0040
-  
-  Vee Tire Rail Tracker:           Crr = 24,7W => 0.0050
-  
-  Maxxis Ikon:                     Crr = 27,8W => 0.0056
-  
-  Onza Canis:                      Crr = 29,3W => 0.0059
-  
-  Maxxis Crossmax Pulse:           Crr = 31,7W => 0.0064
+#### All Mountain
 
+  Schwalbe Nobby Nic Pace Start:   Crr = 19,8W => 0.0038 <br />
+  Schwalbe Fat Albert Rear:        Crr = 20,5W => 0.0041 <br />
+  Vredestein Black Panther:        Crr = 22,3W => 0.0045 <br />
+  WTB Trail Boss Fast Rolling:     Crr = 25,3W => 0.0051 <br />
+  Vredestein Black Panther Xtreme: Crr = 25,4W => 0.0051 <br />
+  Maxxis Ardent:                   Crr = 27,5W => 0.0056 <br />
+  Continental Mountain King:       Crr = 29,8W => 0.0060 <br />
+  WTB Trail Boss High Grip:        Crr = 39,3W => 0.0080 <br />
+  Schwalbe Nobby Nic Trail Star:   Crr = 39,7W => 0.0080 <br />
+  Schwalbe Fat Albert Front:       Crr = 40,0W => 0.0081 <br />
 
-######All Mountain
+#### Enduro
 
-  Schwalbe Nobby Nic Pace Start:   Crr = 19,8W => 0.0038
-  
-  Schwalbe Fat Albert Rear:        Crr = 20,5W => 0.0041
-  
-  Vredestein Black Panther:        Crr = 22,3W => 0.0045
-  
-  WTB Trail Boss Fast Rolling:     Crr = 25,3W => 0.0051
-  
-  Vredestein Black Panther Xtreme: Crr = 25,4W => 0.0051
-  
-  Maxxis Ardent:                   Crr = 27,5W => 0.0056
-  
-  Continental Mountain King:       Crr = 29,8W => 0.0060
-  
-  WTB Trail Boss High Grip:        Crr = 39,3W => 0.0080
-  
-  Schwalbe Nobby Nic Trail Star:   Crr = 39,7W => 0.0080
-  
-  Schwalbe Fat Albert Front:       Crr = 40,0W => 0.0081
-
-
-######Enduro
-
-Maxxis Minnion DHR2:             Crr = 28,6W => 0.0058
-
-Maxxis Shorty:                   Crr = 36,3W => 0.0074
-
-Onza Citius:                     Crr = 40,2W => 0.0081
-
-Bontrager SE5:                   Crr = 43,7W => 0.0089
-
-Schwalbe Magic Marry TrailStart: Crr = 43,7W => 0.0089
-
-Vee Tire Crown F-ree:            Crr = 43,7W => 0.0089
-
-Continental Baron Project:       Crr = 43,8W => 0.0089
+Maxxis Minnion DHR2:             Crr = 28,6W => 0.0058 <br />
+Maxxis Shorty:                   Crr = 36,3W => 0.0074 <br /> 
+Onza Citius:                     Crr = 40,2W => 0.0081 <br /> 
+Bontrager SE5:                   Crr = 43,7W => 0.0089 <br /> 
+Schwalbe Magic Marry TrailStart: Crr = 43,7W => 0.0089 <br /> 
+Vee Tire Crown F-ree:            Crr = 43,7W => 0.0089 <br />
+Continental Baron Project:       Crr = 43,8W => 0.0089 <br />
 
 
 ## Build App for use
 
-Follow Programmer's Guide to setup your Windows or Mac.
+Follow Programmer's Guide to setup your Windows or Mac. <br />
+Download Garmin Connect IQ SDK Manager. <br />
+Use the SDK manager to download the latest Connect IQ SDK and devices. <br />
+Once the download completes, click Yes when prompted to use the new SDK version as your active SDK. <br />
+Close the SDK Manager. <br />
+Install under Visual Studio Code the Monkey C Extension. <br />
 
-Download Garmin Connect IQ SDK Manager.
+In VS Code, click Ctrl + Shift + P (Command + Shift + P on Mac) and select "Monkey C: build for device". <br />
+- Select were the .prg fiel should be stored. <br />
+- Choose Debig or Release (I am using debug). <br />
 
-Use the SDK manager to download the latest Connect IQ SDK and devices.
-
-Once the download completes, click Yes when prompted to use the new SDK version as your active SDK.
-
-Close the SDK Manager.
-
-Install under Visual Studio Code the Monkey C Extension.
-
-In VS Code, click Ctrl + Shift + P (Command + Shift + P on Mac) and select "Monkey C: build for device".
-- Select were the .prg fiel should be stored.
-- Choose Debig or Release (I am using debug).
-
-Connect your device (Edge 130) with data cable to you PC/Mac and move the .prg file under APPS.
+Connect your device (Edge 130) with data cable to you PC/Mac and move the .prg file under APPS. <br />
 
 
 ## Useful Documentation
