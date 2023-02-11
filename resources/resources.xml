@@ -28,7 +28,6 @@
     		<listEntry value="1">@Strings.drag_1</listEntry>
     		<listEntry value="2">@Strings.drag_2</listEntry>
     		<listEntry value="3">@Strings.drag_3</listEntry>
-            <listEntry value="4">@Strings.drag_4</listEntry>
     	    </settingConfig>
     	</setting>
         <!--                                                                    -->        
@@ -41,7 +40,6 @@
     		<listEntry value="1">@Strings.rollingDrag_1</listEntry>
     		<listEntry value="2">@Strings.rollingDrag_2</listEntry>
     		<listEntry value="3">@Strings.rollingDrag_3</listEntry>
-            <listEntry value="4">@Strings.rollingDrag_4</listEntry>
     	    </settingConfig>
     	</setting>
         <!--                                                                    --> 

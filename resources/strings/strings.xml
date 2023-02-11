@@ -1,4 +1,5 @@
 <strings>
+    <string id="AppName">powerMTB</string>
     <!--                                            --> 
     <string id="watt_label">w</string>
     <string id="watt_graph_label">Power in Watt</string>
@@ -17,16 +18,14 @@
     <string id="riderWeight_title">Fahrer Gewicht</string>
     <!--                                            -->
     <string id="drag_title">Luftreibungzahl Cw*A [m2]</string>
-    <string id="drag_1">XC/CrossCountry: 0.32</string>              <!--  0.28  -->  
-    <string id="drag_2">DownCountry: 0.36</string>                  <!--  0.32  -->
-    <string id="drag_3">All-Mountain: 0.42</string>                 <!--  0.42  -->
-    <string id="drag_4">Enduro: 0.52</string>                       <!--  0.52  -->
+    <string id="drag_1">CrossCountry: 0.28</string>                 <!--  0.28  -->  
+    <string id="drag_2">All-Mountain: 0.42</string>                 <!--  0.42  -->
+    <string id="drag_3">Enduro: 0.52</string>                       <!--  0.52  -->
      <!--                                            -->   
     <string id="rollingDrag_title">Rollreibungszahl cr Reifen</string>
-    <string id="rollingDrag_1">CrossCountry: 0.007</string>         <!--  0.006  --> 
-    <string id="rollingDrag_2">DownCountry: 0.008</string>          <!--  0.007  --> 
-    <string id="rollingDrag_3">All-Mountain: 0.009</string>         <!--  0.008  --> 
-    <string id="rollingDrag_4">Enduro: 0.010</string>               <!--  0.009  -->
+    <string id="rollingDrag_1">CrossCountry: 0.003</string>         <!--  0.006  --> 
+    <string id="rollingDrag_2">All Mountain: 0.005</string>         <!--  0.008  --> 
+    <string id="rollingDrag_3">Enduro: 0.008</string>               <!--  0.009  -->
      <!--                                            -->   
     <string id="ground_title">Faktor für Untergrund</string>
     <string id="ground_1">Asphalt floor: 1.0</string>               <!--  1.0  -->
@@ -40,6 +39,5 @@
     <string id="distance_3">Update every 30 m</string>
     <string id="distance_4">Update every 30 m</string> 
     <!--                                            --> 
-    <string id="AppName">powerMTB</string>
     <string id="AppVersionTitle">Version</string>
 </strings>
