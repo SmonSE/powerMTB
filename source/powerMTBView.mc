@@ -77,7 +77,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
         bikeEquipWeight = app.getProperty("bike_Equip_Weight").toFloat(); // Weight =  Bike + Equipment
         cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient Cw*A [m2], CdA = drag area -> Trainer: 0.25, MTB: 0.525, Road: 0.28, 
         airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 -> API: 3.2.0 weather can be calculated .. not for edge 130 :(
-        rollingDrag = app.getProperty("rollingDrag_prop").toNumber();     // Rolling friction coefficient cr of the tire/ Trainer: 0.004, Race: 0.006, Tour: 0.008, Enduro: 0.009
+        rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient cr of the tire/ Trainer: 0.004, Race: 0.006, Tour: 0.008, Enduro: 0.009
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor: Trainer, Asphalt, Schotterweg, Waldweg
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
         version = app.getProperty("appVersion").toString();               // Update App Version
@@ -100,25 +100,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
             }
             default: {
                 cdA = 0.042;
-                break;
-            }
-        }
-
-        switch ( rollingDrag ) {
-            case 1: {
-                rollingDrag = 0.003;
-                break;
-            }
-            case 2: {
-                rollingDrag = 0.005;
-                break;
-            }
-            case 3: {
-                rollingDrag = 0.008;
-                break;
-            }
-            default: {
-                rollingDrag = 0.005;
                 break;
             }
         }
@@ -335,6 +316,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
 // Continental Race King:           Crr = 15,5W / 4908,924 = 0.0031
 // Schwalbe Rocket Ron:             Crr = 16,9W / 4908,924 = 0.0034
 // Vittoria Mezcal:                 Crr = 19,3W / 4908,924 = 0.0039
+// Schwalbe Racing Ralph:           Crr = 19,8W / 4908,924 = 0.0040
 // Vee Tire Rail Tracker:           Crr = 24,7W / 4908,924 = 0.0050
 // Maxxis Ikon:                     Crr = 27,8W / 4908,924 = 0.0056
 // Onza Canis:                      Crr = 29,3W / 4908,924 = 0.0059

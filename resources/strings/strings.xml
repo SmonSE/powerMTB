@@ -13,19 +13,16 @@
     <string id="avValue_graph_label">Power in Watt/Ø</string>
     <string id="avValue_units">t</string>
     <!--                                            -->
-    <string id="bike_Equip_Weight_title">Bike/Ausrüstung Gewicht</string>
-    <string id="airDensity_title">Luftdichte</string>
-    <string id="riderWeight_title">Fahrer Gewicht</string>
+    <string id="bike_Equip_Weight_title">Bike+Equipment weight</string>
+    <string id="airDensity_title">Air density</string>
+    <string id="riderWeight_title">Biker weight</string>
     <!--                                            -->
-    <string id="drag_title">Luftreibungzahl Cw*A [m2]</string>
+    <string id="drag_title">Air friction coefficient</string>
     <string id="drag_1">CrossCountry: 0.28</string>                 <!--  0.28  -->  
     <string id="drag_2">All-Mountain: 0.42</string>                 <!--  0.42  -->
     <string id="drag_3">Enduro: 0.52</string>                       <!--  0.52  -->
      <!--                                            -->   
-    <string id="rollingDrag_title">Rollreibungszahl cr Reifen</string>
-    <string id="rollingDrag_1">CrossCountry: 0.003</string>         <!--  0.006  --> 
-    <string id="rollingDrag_2">All Mountain: 0.005</string>         <!--  0.008  --> 
-    <string id="rollingDrag_3">Enduro: 0.008</string>               <!--  0.009  -->
+    <string id="rollingDrag_title">Rolling resistance tires</string>
      <!--                                            -->   
     <string id="ground_title">Faktor für Untergrund</string>
     <string id="ground_1">Asphalt floor: 1.0</string>               <!--  1.0  -->

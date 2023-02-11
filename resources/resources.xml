@@ -36,11 +36,7 @@
     	</setting>
         <!--                                                                    -->        
         <setting propertyKey="@Properties.rollingDrag_prop" title="@Strings.rollingDrag_title">
-    		<settingConfig type="list">
-    		<listEntry value="1">@Strings.rollingDrag_1</listEntry>
-    		<listEntry value="2">@Strings.rollingDrag_2</listEntry>
-    		<listEntry value="3">@Strings.rollingDrag_3</listEntry>
-    	    </settingConfig>
+            <settingConfig type="numeric" readonly="false" />
     	</setting>
         <!--                                                                    --> 
         <setting propertyKey="@Properties.ground_prop" title="@Strings.ground_title">
