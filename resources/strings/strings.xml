@@ -13,24 +13,24 @@
     <string id="avValue_graph_label">Power in Watt/Ø</string>
     <string id="avValue_units">t</string>
     <!--                                            -->
-    <string id="bike_Equip_Weight_title">Bike+Equipment weight</string>
+    <string id="bike_Equip_Weight_title">Bike/Equipment Weight</string>
     <string id="airDensity_title">Air density</string>
     <string id="riderWeight_title">Biker weight</string>
     <!--                                            -->
-    <string id="drag_title">Air friction coefficient</string>
+    <string id="drag_title">Air Friction Coefficient</string>
     <string id="drag_1">CrossCountry: 0.28</string>                 <!--  0.28  -->  
     <string id="drag_2">All-Mountain: 0.42</string>                 <!--  0.42  -->
     <string id="drag_3">Enduro: 0.52</string>                       <!--  0.52  -->
      <!--                                            -->   
-    <string id="rollingDrag_title">Rolling resistance tires</string>
+    <string id="rollingDrag_title">Rolling Resistance Tires W</string>
      <!--                                            -->   
-    <string id="ground_title">Faktor für Untergrund</string>
+    <string id="ground_title">Subsoil</string>
     <string id="ground_1">Asphalt floor: 1.0</string>               <!--  1.0  -->
     <string id="ground_2">Gravel path: 1.5</string>                 <!--  1.5  -->
     <string id="ground_3">Forest ground: 1.8</string>               <!--  2.0  -->
     <string id="ground_4">Muddy ground: 2.2</string>                <!--  2.5  -->  
     <!--                                            -->   
-    <string id="distance_title">Update distance in m</string>
+    <string id="distance_title">Update Distance in m</string>
     <string id="distance_1">Update every 10 m</string>
     <string id="distance_2">Update every 20 m</string>
     <string id="distance_3">Update every 30 m</string>

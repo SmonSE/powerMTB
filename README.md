@@ -22,37 +22,37 @@ There are devices on the market that integrate such values using sensors, which 
 
 #### CrossCountry/Marathon
 
-  Continental Race King:           Crr = 15,5W => 0.0031 <br />
-  Schwalbe Rocket Ron:             Crr = 16,9W => 0.0034 <br />
-  Vittoria Mezcal:                 Crr = 19,3W => 0.0039 <br />
-  Schwalbe Racing Ralph:           Crr = 19,8W => 0.0040 <br />
-  Vee Tire Rail Tracker:           Crr = 24,7W => 0.0050 <br />
-  Maxxis Ikon:                     Crr = 27,8W => 0.0056 <br />
-  Onza Canis:                      Crr = 29,3W => 0.0059 <br />
-  Maxxis Crossmax Pulse:           Crr = 31,7W => 0.0064 <br />
+- Continental Race King:           Crr = 15,5W => 0.0031 <br />
+- Schwalbe Rocket Ron:             Crr = 16,9W => 0.0034 <br />
+- Vittoria Mezcal:                 Crr = 19,3W => 0.0039 <br />
+- Schwalbe Racing Ralph:           Crr = 19,8W => 0.0040 <br />
+- Vee Tire Rail Tracker:           Crr = 24,7W => 0.0050 <br />
+- Maxxis Ikon:                     Crr = 27,8W => 0.0056 <br />
+- Onza Canis:                      Crr = 29,3W => 0.0059 <br />
+- Maxxis Crossmax Pulse:           Crr = 31,7W => 0.0064 <br />
 
 #### All Mountain
 
-  Schwalbe Nobby Nic Pace Start:   Crr = 19,8W => 0.0038 <br />
-  Schwalbe Fat Albert Rear:        Crr = 20,5W => 0.0041 <br />
-  Vredestein Black Panther:        Crr = 22,3W => 0.0045 <br />
-  WTB Trail Boss Fast Rolling:     Crr = 25,3W => 0.0051 <br />
-  Vredestein Black Panther Xtreme: Crr = 25,4W => 0.0051 <br />
-  Maxxis Ardent:                   Crr = 27,5W => 0.0056 <br />
-  Continental Mountain King:       Crr = 29,8W => 0.0060 <br />
-  WTB Trail Boss High Grip:        Crr = 39,3W => 0.0080 <br />
-  Schwalbe Nobby Nic Trail Star:   Crr = 39,7W => 0.0080 <br />
-  Schwalbe Fat Albert Front:       Crr = 40,0W => 0.0081 <br />
+- Schwalbe Nobby Nic Pace Start:   Crr = 19,8W => 0.0038 <br />
+- Schwalbe Fat Albert Rear:        Crr = 20,5W => 0.0041 <br />
+- Vredestein Black Panther:        Crr = 22,3W => 0.0045 <br />
+- WTB Trail Boss Fast Rolling:     Crr = 25,3W => 0.0051 <br />
+- Vredestein Black Panther Xtreme: Crr = 25,4W => 0.0051 <br />
+- Maxxis Ardent:                   Crr = 27,5W => 0.0056 <br />
+- Continental Mountain King:       Crr = 29,8W => 0.0060 <br />
+- WTB Trail Boss High Grip:        Crr = 39,3W => 0.0080 <br />
+- Schwalbe Nobby Nic Trail Star:   Crr = 39,7W => 0.0080 <br />
+- Schwalbe Fat Albert Front:       Crr = 40,0W => 0.0081 <br />
 
 #### Enduro
 
-Maxxis Minnion DHR2:             Crr = 28,6W => 0.0058 <br />
-Maxxis Shorty:                   Crr = 36,3W => 0.0074 <br /> 
-Onza Citius:                     Crr = 40,2W => 0.0081 <br /> 
-Bontrager SE5:                   Crr = 43,7W => 0.0089 <br /> 
-Schwalbe Magic Marry TrailStart: Crr = 43,7W => 0.0089 <br /> 
-Vee Tire Crown F-ree:            Crr = 43,7W => 0.0089 <br />
-Continental Baron Project:       Crr = 43,8W => 0.0089 <br />
+- Maxxis Minnion DHR2:             Crr = 28,6W => 0.0058 <br />
+- Maxxis Shorty:                   Crr = 36,3W => 0.0074 <br /> 
+- Onza Citius:                     Crr = 40,2W => 0.0081 <br /> 
+- Bontrager SE5:                   Crr = 43,7W => 0.0089 <br /> 
+- Schwalbe Magic Marry TrailStart: Crr = 43,7W => 0.0089 <br /> 
+- Vee Tire Crown F-ree:            Crr = 43,7W => 0.0089 <br />
+- Continental Baron Project:       Crr = 43,8W => 0.0089 <br />
 
 
 ## Build App for use
@@ -73,9 +73,7 @@ Connect your device (Edge 130) with data cable to you PC/Mac and move the .prg f
 
 ## Useful Documentation
 
-https://developer.garmin.com/connect-iq/programmers-guide/
-
-https://developer.garmin.com/downloads/connect-iq/monkey-c/doc/Toybox.html
-
-https://developer.garmin.com/connect-iq/compatible-devices/
+https://developer.garmin.com/connect-iq/programmers-guide/ <br />
+https://developer.garmin.com/downloads/connect-iq/monkey-c/doc/Toybox.html <br />
+https://developer.garmin.com/connect-iq/compatible-devices/ <br />
 
