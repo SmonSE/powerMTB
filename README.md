@@ -51,7 +51,7 @@ For more information on the wattage rating of your tire see this page:
 
 | Brand       | Tire Name                           | Year  | PSI/Bar           | Watts         |
 | :---        | :---                                | :---  | :---              | :---          |
-| Maxxis      | Minnion DHR2                        | 20xx  | 35 PSI / 2.4 Bar  | 28.6 Watts    |
+| Maxxis      | Minion DHR2                         | 20xx  | 35 PSI / 2.4 Bar  | 49.2 Watts    |
 | Maxxis      | Shorty                              | 20xx  | 35 PSI / 2.4 Bar  | 36.3 Watts    |
 | Onza        | Citius                              | 20xx  | 35 PSI / 2.4 Bar  | 40.2 Watts    |
 | Schwalbe    | Magic Marry TrailStart              | 20xx  | 35 PSI / 2.4 Bar  | 43.7 Watts    |

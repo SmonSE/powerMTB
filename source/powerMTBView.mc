@@ -109,23 +109,23 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
         switch ( ground ) {
             case 1: {
-                ground = 0.85;
+                ground = 1.0;
                 break;
             }
             case 2: {
-                ground = 1;
-                break;
-            }
-            case 3: {
                 ground = 1.5;
                 break;
             }
+            case 3: {
+                ground = 1.8;
+                break;
+            }
             case 4: {
-                ground = 3.0;
+                ground = 2.5;
                 break;
             }
             default: {
-                ground = 0.00;
+                ground = 1.0;
                 break;
             }
         }
@@ -141,10 +141,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
             }
             case 3: {
                 distance = 30;
-                break;
-            }
-            case 4: {
-                distance = 40;
                 break;
             }
             default: {

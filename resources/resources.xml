@@ -53,7 +53,6 @@
     		<listEntry value="1">@Strings.distance_1</listEntry>
     		<listEntry value="2">@Strings.distance_2</listEntry>
     		<listEntry value="3">@Strings.distance_3</listEntry>
-            <listEntry value="4">@Strings.distance_4</listEntry>
     	    </settingConfig>
     	</setting>
         <!--                                                                    --> 

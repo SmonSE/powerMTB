@@ -28,13 +28,12 @@
     <string id="ground_1">Asphalt floor: 1.0</string>               <!--  1.0  -->
     <string id="ground_2">Gravel path: 1.5</string>                 <!--  1.5  -->
     <string id="ground_3">Forest ground: 1.8</string>               <!--  2.0  -->
-    <string id="ground_4">Muddy ground: 2.2</string>                <!--  2.5  -->  
+    <string id="ground_4">Muddy ground: 2.5</string>                <!--  2.5  -->  
     <!--                                            -->   
     <string id="distance_title">Update Distance in m</string>
     <string id="distance_1">Update every 10 m</string>
     <string id="distance_2">Update every 20 m</string>
     <string id="distance_3">Update every 30 m</string>
-    <string id="distance_4">Update every 30 m</string> 
     <!--                                            --> 
     <string id="AppVersionTitle">Version</string>
 </strings>
