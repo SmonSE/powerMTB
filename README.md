@@ -21,6 +21,7 @@ There are devices on the market that integrate such values using sensors, which 
 
 
 ## Rolling Resistance Tires:
+For more information on the wattage rating of your tire see this page:
 <https://www.bicyclerollingresistance.com/mtb-reviews>
 
 #### CrossCountry/Marathon
