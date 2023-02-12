@@ -75,10 +75,10 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
         weightRider = app.getProperty("riderWeight_prop").toFloat();      // Weight Rider
         bikeEquipWeight = app.getProperty("bike_Equip_Weight").toFloat(); // Weight =  Bike + Equipment
-        cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient Cw*A [m2], CdA = drag area -> Trainer: 0.25, MTB: 0.525, Road: 0.28, 
-        airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 -> API: 3.2.0 weather can be calculated .. not for edge 130 :(
-        rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient cr of the tire/ Trainer: 0.004, Race: 0.006, Tour: 0.008, Enduro: 0.009
-        ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor: Trainer, Asphalt, Schotterweg, Waldweg
+        cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient Cw*A [m2]
+        airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 
+        rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient Cr of the tire
+        ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
         version = app.getProperty("appVersion").toString();               // Update App Version
 
@@ -250,7 +250,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
             if(info.currentSpeed != null){
                 if (updateStatus == true) {
 
-                    // Pr = C1 * m * g * v 
+                    // Pr = Cr * m * g * v 
                     Pr = rollingDrag * weightOverall * g * (sValue/3.6);
                     // Pa = 0.5 * p * cdA * v * (v-vw)2 or -> Pa = 0.5 * p * (cdA * ground) * v * (v-vw)2
                     Pa = 0.5 * airDensity * (cdA * ground) * (sValue/3.6) * (sValue/3.6) * (sValue/3.6);
