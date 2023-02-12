@@ -21,41 +21,41 @@ There are devices on the market that integrate such values using sensors, which 
 
 
 ## Rolling Resistance Tires:
+<https://www.bicyclerollingresistance.com/mtb-reviews>
 
 #### CrossCountry/Marathon
 
-- Continental Race King:    &nbsp;  Crr = 15,5W  <br />
-- Schwalbe Rocket Ron:      &ensp;  &nbsp;  Crr = 16,9W  <br />
-- Vittoria Mezcal:          &ensp;  &nbsp;  &nbsp;  Crr = 19,3W  <br />
-- Schwalbe Racing Ralph:    &nbsp;  Crr = 19,8W  <br />
-- Vee Tire Rail Tracker:    &nbsp;  Crr = 24,7W  <br />
-- Maxxis Ikon:              &ensp;  &nbsp;  &nbsp;  Crr = 27,8W  <br />
-- Onza Canis:               &nbsp;  &ensp;  &nbsp;  &nbsp;  Crr = 29,3W  <br />
-- Maxxis Crossmax Pulse:    &nbsp;  Crr = 31,7W  <br />
+| Brand       | Tire Name                           | Year  | PSI/Bar           | Watts         |
+| :---        | :---                                | :---  | :---              | :---          |
+| Continental | Race King Protection                | 2015  | 35 PSI / 2.4 Bar  | 21.1 Watts    |
+| Continental | Cross King Protection               | 2021  | 35 PSI / 2.4 Bar  | 29.8 Watts    |
+| Schwalbe    | Rocket Ron LiteSkin Addix Speed     | 2017  | 35 PSI / 2.4 Bar  | 21.3 Watts    |
+| Schwalbe    | Racing Ralph Super Race Addix Speed | 2021  | 35 PSI / 2.4 Bar  | 23.6 Watts    |
+| Vittoria    | Mezcal                              | 2017  | 35 PSI / 2.4 Bar  | 28.4 Watts    |
+| Maxxis      | Rekon Race EXO TR                   | 2019  | 35 PSI / 2.4 Bar  | 26.5 Watts    |
+| Maxxis      | Aspen EXO TR                        | 2019  | 35 PSI / 2.4 Bar  | 26.2 Watts    |
+| Maxxis      | Ardent Race 3C EXO TR               | 2016  | 35 PSI / 2.4 Bar  | 29.9 Watts    |
+| Specialized | S-Works Fast Trak 2BR T5/T7         | 2022  | 35 PSI / 2.4 Bar  | 27.6 Watts    |
 
 #### All Mountain
 
-- Schwalbe Nobby Nic Pace Start:   &nbsp; Crr = 19,8W  <br />
-- Schwalbe Fat Albert Rear:        &nbsp; Crr = 20,5W  <br />
-- Vredestein Black Panther:        &nbsp; Crr = 22,3W  <br />
-- WTB Trail Boss Fast Rolling:     &nbsp; Crr = 25,3W  <br />
-- Vredestein Black Panther Xtreme: &nbsp; Crr = 25,4W  <br />
-- Maxxis Ardent:                   &nbsp; Crr = 27,5W  <br />
-- Continental Mountain King:       &nbsp; Crr = 29,8W  <br />
-- WTB Trail Boss High Grip:        &nbsp; Crr = 39,3W  <br />
-- Schwalbe Nobby Nic Trail Star:   &nbsp; Crr = 39,7W  <br />
-- Schwalbe Fat Albert Front:       &nbsp; Crr = 40,0W  <br />
+| Brand       | Tire Name                           | Year  | PSI/Bar           | Watts         |
+| :---        | :---                                | :---  | :---              | :---          |
+| Continental | Mountain King II RaceSport          | 2015  | 35 PSI / 2.4 Bar  | 29.6 Watts    |
+| Maxxis      | Ardent Race 3C EXO TR               | 2016  | 35 PSI / 2.4 Bar  | 29.9 Watts    |
+| Schwalbe    | Nobby Nic Performance               | 2014  | 35 PSI / 2.4 Bar  | 27.2 Watts    |
+| Michelin    | Force AM                            | 2017  | 35 PSI / 2.4 Bar  | 33.6 Watts    |
 
 #### Enduro
 
-- Maxxis Minnion DHR2:             Crr = 28,6W  <br />
-- Maxxis Shorty:                   Crr = 36,3W  <br /> 
-- Onza Citius:                     Crr = 40,2W  <br /> 
-- Bontrager SE5:                   Crr = 43,7W  <br /> 
-- Schwalbe Magic Marry TrailStart: Crr = 43,7W  <br /> 
-- Vee Tire Crown F-ree:            Crr = 43,7W  <br />
-- Continental Baron Project:       Crr = 43,8W  <br />
-
+| Brand       | Tire Name                           | Year  | PSI/Bar           | Watts         |
+| :---        | :---                                | :---  | :---              | :---          |
+| Maxxis      | Minnion DHR2                        | 20xx  | 35 PSI / 2.4 Bar  | 28.6 Watts    |
+| Maxxis      | Shorty                              | 20xx  | 35 PSI / 2.4 Bar  | 36.3 Watts    |
+| Onza        | Citius                              | 20xx  | 35 PSI / 2.4 Bar  | 40.2 Watts    |
+| Schwalbe    | Magic Marry TrailStart              | 20xx  | 35 PSI / 2.4 Bar  | 43.7 Watts    |
+| Schwalbe    | Hans Dampf TrailStar                | 2017  | 35 PSI / 2.4 Bar  | 38.5 Watts    |
+| Continental | Baron Project:                      | 20xx  | 35 PSI / 2.4 Bar  | 43.8 Watts    |
 
 
 ## Build App for use
