@@ -4,7 +4,7 @@
     <property id="bike_Equip_Weight" type="float">12.0</property>
     <property id="drag_prop" type="number">1</property>             
     <property id="airDensity_prop" type="float">1.205</property>
-    <property id="rollingDrag_prop" type="float">27.8</property>
+    <property id="rollingDrag_prop" type="float">26.5</property>
     <property id="ground_prop" type="number">1</property>
     <property id="distance_prop" type="number">1</property>
     <!--                    App Version                  -->

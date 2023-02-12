@@ -19,15 +19,15 @@
     <!--                                            -->
     <string id="drag_title">Air Friction Coefficient</string>
     <string id="drag_1">CrossCountry: 0.28</string>                 <!--  0.28  -->  
-    <string id="drag_2">All-Mountain: 0.42</string>                 <!--  0.42  -->
-    <string id="drag_3">Enduro: 0.52</string>                       <!--  0.52  -->
+    <string id="drag_2">All-Mountain: 0.32</string>                 <!--  0.42  -->
+    <string id="drag_3">Enduro: 0.36</string>                       <!--  0.52  -->
      <!--                                            -->   
     <string id="rollingDrag_title">Rolling Resistance Tires W</string>
      <!--                                            -->   
     <string id="ground_title">Subsoil</string>
     <string id="ground_1">Asphalt floor: 1.0</string>               <!--  1.0  -->
     <string id="ground_2">Gravel path: 1.5</string>                 <!--  1.5  -->
-    <string id="ground_3">Forest ground: 1.8</string>               <!--  2.0  -->
+    <string id="ground_3">Forest ground: 2.0</string>               <!--  2.0  -->
     <string id="ground_4">Muddy ground: 2.5</string>                <!--  2.5  -->  
     <!--                                            -->   
     <string id="distance_title">Update Distance in m</string>

@@ -75,8 +75,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
         weightRider = app.getProperty("riderWeight_prop").toFloat();      // Weight Rider
         bikeEquipWeight = app.getProperty("bike_Equip_Weight").toFloat(); // Weight =  Bike + Equipment
-        cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient Cw*A [m2]
-        airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 
+        cdA = app.getProperty("drag_prop").toNumber();                    // Air friction coefficient CwA(m²)
+        airDensity = app.getProperty("airDensity_prop").toFloat();        // air density: 1.205 kg/m³
         rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient Cr of the tire
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
