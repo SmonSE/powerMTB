@@ -62,7 +62,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-
         label = "";
 
         sValue  = 0.00f;
@@ -112,15 +111,15 @@ class powerMTBView extends WatchUi.SimpleDataField {
                 break;
             }
             case 2: {
-                cdA = 0.42;
+                cdA = 0.32;
                 break;
             }
             case 3: {
-                cdA = 0.52;
+                cdA = 0.36;
                 break;
             }
             default: {
-                cdA = 0.042;
+                cdA = 0.28;
                 break;
             }
         }
@@ -135,7 +134,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                 break;
             }
             case 3: {
-                ground = 1.8;
+                ground = 2.0;
                 break;
             }
             case 4: {
