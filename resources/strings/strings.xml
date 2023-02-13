@@ -1,17 +1,17 @@
 <strings>
     <string id="AppName">powerMTB</string>
     <!--                                            --> 
-    <string id="watt_label">w</string>
+    <string id="watt_label">W</string>
     <string id="watt_graph_label">Power in Watt</string>
-    <string id="watt_units">t</string>
+    <string id="watt_units">W</string>
     <!--                                            -->
     <string id="climbP_label">%</string>
     <string id="climbP_graph_label">Climb in %</string>
-    <string id="climbP_units">t</string>
+    <string id="climbP_units">%</string>
     <!--                                            -->
-    <string id="avValue_label">w/Ø</string>
-    <string id="avValue_graph_label">Power in Watt/Ø</string>
-    <string id="avValue_units">t</string>
+    <string id="avValue_label">W</string>
+    <string id="avValue_graph_label">Power in Watt Ø</string>
+    <string id="avValue_units">W</string>
     <!--                                            -->
     <string id="bike_Equip_Weight_title">Bike/Equipment Weight</string>
     <string id="airDensity_title">Air density</string>
