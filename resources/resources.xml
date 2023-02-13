@@ -56,6 +56,13 @@
     	    </settingConfig>
     	</setting>
         <!--                                                                    --> 
+        <setting propertyKey="@Properties.display_prop" title="@Strings.display_title">
+    		<settingConfig type="list">
+    		<listEntry value="1">@Strings.display_1</listEntry>
+    		<listEntry value="2">@Strings.display_2</listEntry>
+    	    </settingConfig>
+    	</setting>
+        <!--                                                                    --> 
         <setting propertyKey="@Properties.appVersion" title="@Strings.AppVersionTitle">
             <settingConfig type="alphaNumeric" readonly="true" />
         </setting>

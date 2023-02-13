@@ -7,6 +7,7 @@
     <property id="rollingDrag_prop" type="float">26.5</property>
     <property id="ground_prop" type="number">1</property>
     <property id="distance_prop" type="number">1</property>
+    <property id="display_prop" type="number">1</property>
     <!--                    App Version                  -->
-    <property id="appVersion" type="string">1.0.7</property>
+    <property id="appVersion" type="string">1.1.0</property>
 </properties>

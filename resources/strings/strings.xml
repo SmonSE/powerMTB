@@ -35,5 +35,10 @@
     <string id="distance_2">Update every 20 m</string>
     <string id="distance_3">Update every 30 m</string>
     <!--                                            --> 
+    <string id="display_title">Switch Display Value</string>
+    <string id="display_1">Power in Watt</string>
+    <string id="display_2">Power in Watt/Ø</string>
+    <!--                                            -->     
     <string id="AppVersionTitle">Version</string>
+    <!--                                            -->   
 </strings>

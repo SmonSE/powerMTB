@@ -26,6 +26,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var rollingDrag      as Numeric;
     hidden var ground           as Numeric;
     hidden var distance         as Numeric;
+    hidden var display          as Numeric;
     hidden var version          as Numeric;
 
     var startWatt = false;                              // Set Watt value at the beginning to avoid empty data field
@@ -61,7 +62,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-        label = "Watt Ø";
+
+        label = "";
 
         sValue  = 0.00f;
         mValue  = 0.00f;
@@ -81,12 +83,28 @@ class powerMTBView extends WatchUi.SimpleDataField {
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
         version = app.getProperty("appVersion").toString();               // Update App Version
+        display = app.getProperty("display_prop").toNumber();             // Change display output
 
         // Weight of driver and equipment
         weightOverall = weightRider + bikeEquipWeight;
 
         // Rolling Resistance: 
         rollingDrag = rollingDrag / (weightOverall * 9.81 * 5.56);
+
+        switch ( display ) {
+            case 1: {
+                label = "Watt";
+                break;
+            }
+            case 2: {
+                label = "Watt Ø";
+                break;
+            }
+            default: {
+                label = "Watt";
+                break;
+            }
+        }
 
         switch ( cdA ) {
             case 1: {
@@ -275,11 +293,13 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         // The IQ grafik should not get into negativ value 
                         /*
                         if (k < 0){
-                            climbP = k * (-1);
+                            climbP = k;
                         } else {
                             climbP = k;
                         }
                         */
+
+                        climbP = k;
 
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
@@ -289,6 +309,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         //Sys.println("DEBUG: Watt ( w ): " + wValue);
                         //Sys.println("DEBUG: Watt ( Ø ): " + avValue);
                         //Sys.println("DEBUG: Climb( % ): " + climbP);
+                        //Sys.println("DEBUG: rollingDrag( % ): " + rollingDrag);
                     }
                 }
             } else {
@@ -298,9 +319,26 @@ class powerMTBView extends WatchUi.SimpleDataField {
 
         updateStatus = false;
 
-        var retVal = avValue.format("%d");      // now Average Watt is shown on display
-        var retValNb = retVal.toNumber();
-        //Sys.println("DEBUG: retVal() :" + retVal); 
+        var retVal = 0;
+        var retValNb = 0;
+
+        switch ( display ) {
+            case 1: {
+                retVal = wValue.format("%d");      // Watt
+                retValNb = retVal.toNumber();
+                break;
+            }
+            case 2: {
+                retVal = avValue.format("%d");      // Watt Average 
+                retValNb = retVal.toNumber();
+                break;
+            }
+            default: {
+                retVal = wValue.format("%d");      // Default
+                retValNb = retVal.toNumber();
+                break;
+            }
+        }
 
         // See Activity.Info in the documentation for available information.
         return retValNb;       
