@@ -18,9 +18,9 @@
     <string id="riderWeight_title">Biker weight</string>
     <!--                                            -->
     <string id="drag_title">Air Friction Coefficient</string>
-    <string id="drag_1">CrossCountry: 0.40</string>                 <!--  0.28  -->  
-    <string id="drag_2">All-Mountain: 0.44</string>                 <!--  0.42  -->
-    <string id="drag_3">Enduro: 0.51</string>                       <!--  0.52  -->
+    <string id="drag_1">CrossCountry: 0.40</string>                 <!--  0.40  -->  
+    <string id="drag_2">All-Mountain: 0.44</string>                 <!--  0.44  -->
+    <string id="drag_3">Enduro: 0.51</string>                       <!--  0.51  -->
      <!--                                            -->   
     <string id="rollingDrag_title">Rolling Resistance Tires W</string>
      <!--                                            -->   
