@@ -49,21 +49,10 @@
     	</setting>
         <!--                                                                    --> 
         <setting propertyKey="@Properties.distance_prop" title="@Strings.distance_title">
-    		<settingConfig type="list">
-    		<listEntry value="1">@Strings.distance_1</listEntry>
-    		<listEntry value="2">@Strings.distance_2</listEntry>
-    		<listEntry value="3">@Strings.distance_3</listEntry>
-    	    </settingConfig>
+    		<settingConfig type="numeric" readonly="false" />
     	</setting>
         <!--                                                                    --> 
-        <setting propertyKey="@Properties.display_prop" title="@Strings.display_title">
-    		<settingConfig type="list">
-    		<listEntry value="1">@Strings.display_1</listEntry>
-    		<listEntry value="2">@Strings.display_2</listEntry>
-    	    </settingConfig>
-    	</setting>
-        <!--                                                                    --> 
-        <setting propertyKey="@Properties.appVersion" title="@Strings.AppVersionTitle">
+        <setting propertyKey="@Properties.version_prop" title="@Strings.version_title">
             <settingConfig type="alphaNumeric" readonly="true" />
         </setting>
         <!--                                                                    --> 

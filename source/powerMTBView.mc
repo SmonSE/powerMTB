@@ -13,11 +13,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var sValue  as Numeric;                      // Speed
     hidden var mValue  as Numeric;                      // Distance
     hidden var wValue  as Numeric;                      // Watt
-    hidden var aValue  as Numeric;                      // Ascent
     hidden var dValue  as Numeric;                      // Ambient Pressure
-    hidden var hValue  as Numeric;                      // Heartrate
     hidden var avValue as Numeric;                      // Watt Average
-    hidden var asValue as Numeric;                      // Average Speed
     hidden var kgValue as Numeric;                      // Watt / kg
 
     hidden var bikeEquipWeight  as Numeric;
@@ -26,8 +23,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var rollingDrag      as Numeric;
     hidden var ground           as Numeric;
     hidden var distance         as Numeric;
-    hidden var display          as Numeric;
-    hidden var version          as Numeric;
+    hidden var version          as String;
 
     var startWatt = false;                              // Set Watt value at the beginning to avoid empty data field
     var start = false;                                  // Set StartPresure once at the beginning
@@ -46,7 +42,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
     
     var startPressure = 0;
     var paMeter = 0;
-    var climbP = 0;
     var calcPressure = 0;
 
     var powerTotal = 0;
@@ -62,16 +57,13 @@ class powerMTBView extends WatchUi.SimpleDataField {
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-        label = "";
+        label = "Watt Ø";
 
         sValue  = 0.00f;
         mValue  = 0.00f;
         wValue  = 0.00f;
-        aValue  = 0.00f;
         dValue  = 0.00f;
-        hValue  = 0.00f;
         avValue = 0.00f;
-        asValue = 0.00f;
         kgValue = 0.00f;
 
         weightRider = app.getProperty("riderWeight_prop").toFloat();      // Weight Rider
@@ -81,8 +73,9 @@ class powerMTBView extends WatchUi.SimpleDataField {
         rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient Cr of the tire
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
-        version = app.getProperty("appVersion").toString();               // Update App Version
-        display = app.getProperty("display_prop").toNumber();             // Change display output
+        version = app.getProperty("version_prop").toString();             // Update App Version
+
+        Sys.println("DEBUG: Version: " + version);
 
         // Weight of driver and equipment
         weightOverall = weightRider + bikeEquipWeight;
@@ -90,36 +83,21 @@ class powerMTBView extends WatchUi.SimpleDataField {
         // Rolling Resistance: 
         rollingDrag = rollingDrag / (weightOverall * 9.81 * 5.56);
 
-        switch ( display ) {
-            case 1: {
-                label = "Watt";
-                break;
-            }
-            case 2: {
-                label = "Watt Ø";
-                break;
-            }
-            default: {
-                label = "Watt";
-                break;
-            }
-        }
-
         switch ( cdA ) {
             case 1: {
-                cdA = 0.28;
+                cdA = 0.40;
                 break;
             }
             case 2: {
-                cdA = 0.32;
+                cdA = 0.44;
                 break;
             }
             case 3: {
-                cdA = 0.36;
+                cdA = 0.51;
                 break;
             }
             default: {
-                cdA = 0.28;
+                cdA = 0.40;
                 break;
             }
         }
@@ -146,34 +124,16 @@ class powerMTBView extends WatchUi.SimpleDataField {
                 break;
             }
         }
-
-        switch ( distance ) {
-            case 1: {
-                distance = 10;
-                break;
-            }
-            case 2: {
-                distance = 20;
-                break;
-            }
-            case 3: {
-                distance = 30;
-                break;
-            }
-            default: {
-                distance = 10;
-                break;
-            }
-        }
     
     // Create the custom FIT data field we want to record.
-    fitField1 = SimpleDataField.createField("watt_time", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt", :nativeNum => 20});
+    // fitField1 = SimpleDataField.createField("Leistung", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W", :nativeNum => 7});
+    fitField1 = SimpleDataField.createField("Leistung", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
     fitField1.setData(0); 
 
-    fitField2 = SimpleDataField.createField("watt_average", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"watt"});
+    fitField2 = SimpleDataField.createField("Leistung Ø", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
     fitField2.setData(0);
 
-    fitField3 = SimpleDataField.createField("climb_percent", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"meter"});
+    fitField3 = SimpleDataField.createField("Steigung", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%"});
     fitField3.setData(0);  
     }
 
@@ -198,7 +158,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
                 mValue = info.elapsedDistance as Number / 1000;
                 var mVal = mValue.format("%.3f");
                 mValue = mVal.toDouble();
-                //Sys.println("DEBUG: mValue(2) :" + mValue + "  " + mVal); 
             } else {
                 mValue = 0.00f;
             }
@@ -210,17 +169,14 @@ class powerMTBView extends WatchUi.SimpleDataField {
                 if (start == false) {
                     startPressure = info.ambientPressure as Number; 
                     startPressure = startPressure.toFloat() * 0.0001;
-                    //Sys.println("DEBUG: startPressure() :" + startPressure); 
                     start = true;
                 } 
-
                 dValue = info.ambientPressure as Number; 
                 dValue = dValue.toFloat() * 0.0001;
-                //Sys.println("DEBUG: dValue() :" + dValue); 
                 
                 var checkMValue = mValue.toDouble();
                 var checkNewDistance = newDistance.toDouble();
-                //Sys.println("DEBUG: onUpdate() check: " + checkMValue + " == " + checkNewDistance);
+
                 if (checkMValue >= checkNewDistance) {
                     newDistance += distance * 0.001;
                     updateStatus = true;
@@ -236,7 +192,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             // k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
-                            //Sys.println("DEBUG: climb(%) :" + k); 
 
                         } else {
                             calcPressure = dValue - startPressure;
@@ -248,7 +203,6 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             //k = (h/a) * 100 
                             k = (paMeter/distance) * 100;
                             k = k * (-1);
-                            //Sys.println("DEBUG: climb(%) :" + k);  
 
                         } 
                     }  
@@ -275,8 +229,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
                     powerTotal = Pr + Pa + Pc + Pm;
 
                     if (sValue > 0 && updateStatus == true) { 
-
-                        if (powerTotal > 0) {                                   // no negativ Watt values
+                        // add 0 because of average
+                        if (powerTotal >= 0) {                                  // no negativ Watt values
                             wValue = powerTotal;
                             powerCount += 1;
 
@@ -288,56 +242,24 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         } else {
                             wValue = 0;
                         }
- 
-                        // The IQ grafik should not get into negativ value 
-                        /*
-                        if (k < 0){
-                            climbP = k;
-                        } else {
-                            climbP = k;
-                        }
-                        */
-
-                        climbP = k;
 
                         // Add Values to FitContributor
                         fitField1.setData(wValue.toNumber()); 
                         fitField2.setData(avValue.toNumber());
-                        fitField3.setData(climbP.toNumber()); 
-
-                        //Sys.println("DEBUG: Watt ( w ): " + wValue);
-                        //Sys.println("DEBUG: Watt ( Ø ): " + avValue);
-                        //Sys.println("DEBUG: Climb( % ): " + climbP);
-                        //Sys.println("DEBUG: rollingDrag( % ): " + rollingDrag);
+                        fitField3.setData(k.toNumber()); 
                     }
                 }
             } else {
                 sValue = 0.00f;
             }
         }
-
         updateStatus = false;
 
-        var retVal = 0;
-        var retValNb = 0;
+        var retVal = avValue.format("%d");      // Watt Average 
+        var retValNb = retVal.toNumber();
 
-        switch ( display ) {
-            case 1: {
-                retVal = wValue.format("%d");      // Watt
-                retValNb = retVal.toNumber();
-                break;
-            }
-            case 2: {
-                retVal = avValue.format("%d");      // Watt Average 
-                retValNb = retVal.toNumber();
-                break;
-            }
-            default: {
-                retVal = wValue.format("%d");      // Default
-                retValNb = retVal.toNumber();
-                break;
-            }
-        }
+        //var retVal = wValue.format("%d");       // Watt
+        //var retValNb = retVal.toNumber();
 
         // See Activity.Info in the documentation for available information.
         return retValNb;       

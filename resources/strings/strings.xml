@@ -18,9 +18,9 @@
     <string id="riderWeight_title">Biker weight</string>
     <!--                                            -->
     <string id="drag_title">Air Friction Coefficient</string>
-    <string id="drag_1">CrossCountry: 0.28</string>                 <!--  0.28  -->  
-    <string id="drag_2">All-Mountain: 0.32</string>                 <!--  0.42  -->
-    <string id="drag_3">Enduro: 0.36</string>                       <!--  0.52  -->
+    <string id="drag_1">CrossCountry: 0.40</string>                 <!--  0.28  -->  
+    <string id="drag_2">All-Mountain: 0.44</string>                 <!--  0.42  -->
+    <string id="drag_3">Enduro: 0.51</string>                       <!--  0.52  -->
      <!--                                            -->   
     <string id="rollingDrag_title">Rolling Resistance Tires W</string>
      <!--                                            -->   
@@ -30,15 +30,8 @@
     <string id="ground_3">Forest ground: 2.0</string>               <!--  2.0  -->
     <string id="ground_4">Muddy ground: 2.5</string>                <!--  2.5  -->  
     <!--                                            -->   
-    <string id="distance_title">Update Distance in m</string>
-    <string id="distance_1">Update every 10 m</string>
-    <string id="distance_2">Update every 20 m</string>
-    <string id="distance_3">Update every 30 m</string>
-    <!--                                            --> 
-    <string id="display_title">Switch Display Value</string>
-    <string id="display_1">Power in Watt</string>
-    <string id="display_2">Power in Watt/Ø</string>
+    <string id="distance_title">Update Interval in m</string>
     <!--                                            -->     
-    <string id="AppVersionTitle">Version</string>
+    <string id="version_title">Version</string>
     <!--                                            -->   
 </strings>
