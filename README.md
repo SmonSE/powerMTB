@@ -2,15 +2,10 @@
 
 ## TRAIN BY WATTS
 
-The trend in cycling is that the current performance is measured in watts/kg. This allows a relatively accurate evaluation, 
-with which training progress can be measured. Watt measuring systems offer clear advantages compared to a training analysis via the heart rate, 
-but are quite expensive and therefore mainly found in amateur and professional areas.
-Since I don't want to spend the money for such a power meter at the moment (> 500€), I'm trying to develop a data field for my Garmin Edge 130, 
-which calculates this power and displays it in plausible values.
+This is actually just a simple watt data field which is in constant development. The trend in cycling is that the current performance is measured in watts/kg. This allows a relatively accurate evaluation, with which training progress can be measured. Watt measuring systems offer clear advantages compared to a training analysis via the heart rate, but are quite expensive and therefore mainly found in amateur and professional areas. I'm trying to develop a data field for my Garmin Edge 130, which calculates this power and displays it in plausible values.
+I have checked my wattage readings using the Golden Cheetah open source software and individual online wattage meters. The biggest problem at the moment is that I can't include the wind force (headwind) in my calculations.There are devices on the market that integrate such values using sensors, which the Edge unfortunately does not provide.
 
-I have checked my wattage readings using the Golden Cheetah open source software and individual online wattage meters.
-The biggest problem at the moment is that I can't include the wind force (headwind) in my calculations. 
-There are devices on the market that integrate such values using sensors, which the Edge unfortunately does not provide.
+Unfortunately, I cannot write the individual values into the Garmin overview because Garmin does not want this. The only way to read the values is in the three generated IQ graphics.
 
 The Watchfield is of course in the development phase. I'm happy about any feedback or for help to make the Watchfield more accurate (as far as possible).
 
