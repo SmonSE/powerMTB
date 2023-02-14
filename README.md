@@ -8,10 +8,11 @@ but are quite expensive and therefore mainly found in amateur and professional a
 Since I don't want to spend the money for such a power meter at the moment (> 500€), I'm trying to develop a data field for my Garmin Edge 130, 
 which calculates this power and displays it in plausible values.
 
-I compared the watt calculation with a roller trainer and Zwift, where I calculate identical values on the flat and without a headwind.
+I have checked my wattage readings using the Golden Cheetah open source software and individual online wattage meters.
 The biggest problem at the moment is that I can't include the wind force (headwind) in my calculations. 
 There are devices on the market that integrate such values using sensors, which the Edge unfortunately does not provide.
 
+The Watchfield is of course in the development phase. I'm happy about any feedback or for help to make the Watchfield more accurate (as far as possible).
 
 ## Garmin Edge Screenshot
 
