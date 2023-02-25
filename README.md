@@ -9,6 +9,9 @@ Unfortunately, I cannot write the individual values into the Garmin overview bec
 
 The Watchfield is of course in the development phase. I'm happy about any feedback or for help to make the Watchfield more accurate (as far as possible).
 
+## Download App in Garmin Connect IQ-Store
+https://apps.garmin.com/en-US/apps/7df1d4b0-d42a-4201-beec-3ee95d64938d
+
 ## Garmin Edge Screenshot
 
 
