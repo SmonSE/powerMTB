@@ -8,5 +8,5 @@
     <property id="ground_prop" type="number">1</property>
     <property id="distance_prop" type="number">10</property>
     <!--                    App Version                  -->
-    <property id="version_prop" type="string">1.1.2</property>
+    <property id="version_prop" type="string">1.1.3</property>
 </properties>

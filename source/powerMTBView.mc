@@ -57,7 +57,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-        label = "Watt Ø";
+        //label = "Watt Ø";
+        label = "Watt";
 
         sValue  = 0.00f;
         mValue  = 0.00f;
@@ -255,11 +256,11 @@ class powerMTBView extends WatchUi.SimpleDataField {
         }
         updateStatus = false;
 
-        var retVal = avValue.format("%d");      // Watt Average 
-        var retValNb = retVal.toNumber();
-
-        //var retVal = wValue.format("%d");       // Watt
+        //var retVal = avValue.format("%d");      // Watt Average 
         //var retValNb = retVal.toNumber();
+
+        var retVal = wValue.format("%d");       // Watt
+        var retValNb = retVal.toNumber();
 
         // See Activity.Info in the documentation for available information.
         return retValNb;       
