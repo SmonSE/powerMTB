@@ -259,10 +259,11 @@ class powerMTBView extends WatchUi.SimpleDataField {
         //var retVal = avValue.format("%d");      // Watt Average 
         //var retValNb = retVal.toNumber();
 
-        var retVal = wValue.format("%d");       // Watt
-        var retValNb = retVal.toNumber();
+        var retVal = wValue.format("%i");       // Watt
+        var retValSt = retVal.toString();
+        //var retValNb = retValSt.toNumber();
 
         // See Activity.Info in the documentation for available information.
-        return retValNb;       
+        return retValSt;       
     }
 }
