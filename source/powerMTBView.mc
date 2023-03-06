@@ -39,7 +39,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var Pc = 0;                                         // Pc = Steigungswiderstand
     var Pm = 0;                                         // Pm = Mechanische Widerstand
     var k = 0;                                          // Steigung in %
-    
+
+    var empty = 0;
     var startPressure = 0;
     var paMeter = 0;
     var calcPressure = 0;
@@ -244,10 +245,19 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             wValue = 0;
                         }
 
-                        // Add Values to FitContributor
-                        fitField1.setData(wValue.toNumber()); 
-                        fitField2.setData(avValue.toNumber());
-                        fitField3.setData(k.toNumber()); 
+                        // Add Values to FitContributor 
+                        // wait 50m until barometer is calibrated
+                        // otherwise grafic could be wrong
+                        if (mValue >= 0.05) {
+                            fitField1.setData(wValue.toNumber()); 
+                            fitField2.setData(avValue.toNumber());
+                            fitField3.setData(k.toNumber()); 
+                        } else {
+                            fitField1.setData(empty.toNumber()); 
+                            fitField2.setData(empty.toNumber());
+                            fitField3.setData(empty.toNumber()); 
+                        }
+
                     }
                 }
             } else {
