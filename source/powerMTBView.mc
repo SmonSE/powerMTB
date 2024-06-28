@@ -2,6 +2,9 @@ import Toybox.Activity;
 import Toybox.Lang;
 import Toybox.Time;
 import Toybox.WatchUi;
+import Toybox.ActivityMonitor;
+import Toybox.Graphics;
+import Toybox.Math;
 
 using Toybox.System as Sys;
 using Toybox.Application as App;
@@ -51,9 +54,11 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var powerCount = 0;
     var newDistance = 0.00;
 
-    var fitField1;
-    var fitField2;
-    var fitField3;
+    var fitField1 = null;
+    var fitField2 = null;
+    var fitField3 = null;
+    var fitField4 = null;
+    var fitField5 = null;
 
     // Set the label of the data field here.
     function initialize(app) {
@@ -129,14 +134,20 @@ class powerMTBView extends WatchUi.SimpleDataField {
     
     // Create the custom FIT data field we want to record.
     // fitField1 = SimpleDataField.createField("Leistung", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W", :nativeNum => 7});
-    fitField1 = SimpleDataField.createField("Leistung", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
+    fitField1 = SimpleDataField.createField("Watt", 0, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
     fitField1.setData(0); 
 
-    fitField2 = SimpleDataField.createField("Leistung Ø", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
+    fitField2 = SimpleDataField.createField("Watt Ø", 1, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"W"});
     fitField2.setData(0);
 
-    fitField3 = SimpleDataField.createField("Steigung", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%"});
+    fitField3 = SimpleDataField.createField("Gradient", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%"});
     fitField3.setData(0);  
+
+    fitField4 = SimpleDataField.createField("Watt Ø", 3, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField4.setData(0.0);
+
+    fitField5 = SimpleDataField.createField("W/kg", 4, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField5.setData(0.0);
     }
 
     // The given info object contains all the current workout
@@ -251,11 +262,17 @@ class powerMTBView extends WatchUi.SimpleDataField {
                         if (mValue >= 0.05) {
                             fitField1.setData(wValue.toNumber()); 
                             fitField2.setData(avValue.toNumber());
-                            fitField3.setData(k.toNumber()); 
+                            fitField3.setData(k.toNumber());
+                            fitField4.setData(avValue.toNumber());
+                            Sys.println("Watt Ø: " + avValue.toNumber());
+                            fitField5.setData(kgValue.toFloat());
+                            Sys.println("Watt/kg: " + kgValue.toFloat());
                         } else {
                             fitField1.setData(empty.toNumber()); 
                             fitField2.setData(empty.toNumber());
                             fitField3.setData(empty.toNumber()); 
+                            fitField4.setData(empty.toNumber());
+                            fitField5.setData(empty.toNumber());
                         }
 
                     }

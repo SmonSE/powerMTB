@@ -13,6 +13,14 @@
     <string id="avValue_graph_label">Power in Watt Ø</string>
     <string id="avValue_units">W</string>
     <!--                                            -->
+    <string id="wattP_label">Watt Ø</string>
+    <string id="wattP_graph_label">W</string>
+    <string id="wattP_units">W</string>
+    <!--                                            -->
+    <string id="wattKg_label">Watt/kg</string>
+    <string id="wattKg_graph_label">W/kg</string>
+    <string id="wattKg_units">W/kg</string> 
+    <!--                                            -->
     <string id="bike_Equip_Weight_title">Bike/Equipment Weight</string>
     <string id="airDensity_title">Air density</string>
     <string id="riderWeight_title">Biker weight</string>

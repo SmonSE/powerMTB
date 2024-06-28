@@ -1,24 +1,8 @@
-<resources>
-    <fitContributions>
-        <fitField id="0" displayInChart="true" sortOrder = "0" precision="2"
-        chartTitle="@Strings.watt_graph_label" dataLabel="@Strings.watt_label"
-        unitLabel="@Strings.watt_units" fillColor="#0000FF" />
-        <!--                                                                    -->
-        <fitField id="1" displayInChart="true" sortOrder = "0" precision="2"
-        chartTitle="@Strings.avValue_graph_label" dataLabel="@Strings.avValue_label"
-        unitLabel="@Strings.avValue_units" fillColor="#FF0000" />
-        <!--                                                                    -->
-        <fitField id="2" displayInChart="true" sortOrder = "0" precision="2"
-        chartTitle="@Strings.climbP_graph_label" dataLabel="@Strings.climbP_label"
-        unitLabel="@Strings.climbP_units" fillColor="#00FF00" />
-    </fitContributions>
-
-    <settings>
-        <!--                                                                    --> 
+<settings>
         <setting propertyKey="@Properties.riderWeight_prop" title="@Strings.riderWeight_title">
     		<settingConfig type="numeric" readonly="false" />
     	</setting>
-        <!--                                                                    -->        
+        <!--                                                                    --> 
     	<setting propertyKey="@Properties.bike_Equip_Weight" title="@Strings.bike_Equip_Weight_title">
     		<settingConfig type="numeric" readonly="false" />
     	</setting>
@@ -30,11 +14,11 @@
     		<listEntry value="3">@Strings.drag_3</listEntry>
     	    </settingConfig>
     	</setting>
-        <!--                                                                    -->        
+        <!--                                                                    --> 
     	<setting propertyKey="@Properties.airDensity_prop" title="@Strings.airDensity_title">
     		<settingConfig type="numeric" readonly="false" />
     	</setting>
-        <!--                                                                    -->        
+        <!--                                                                    --> 
         <setting propertyKey="@Properties.rollingDrag_prop" title="@Strings.rollingDrag_title">
             <settingConfig type="numeric" readonly="false" />
     	</setting>
@@ -56,5 +40,4 @@
             <settingConfig type="alphaNumeric" readonly="true" />
         </setting>
         <!--                                                                    --> 
-    </settings>
-</resources>
+</settings>
