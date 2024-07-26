@@ -6,6 +6,10 @@
     	<setting propertyKey="@Properties.bike_Equip_Weight" title="@Strings.bike_Equip_Weight_title">
     		<settingConfig type="numeric" readonly="false" />
     	</setting>
+		<!--                                                                    --> 
+    	<setting propertyKey="@Properties.ftp_prop" title="@Strings.ftp_title">
+    		<settingConfig type="numeric" readonly="false" />
+    	</setting> 
         <!--                                                                    --> 
         <setting propertyKey="@Properties.drag_prop" title="@Strings.drag_title">
     		<settingConfig type="list">

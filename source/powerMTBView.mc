@@ -19,6 +19,9 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var dValue  as Numeric;                      // Ambient Pressure
     hidden var avValue as Numeric;                      // Watt Average
     hidden var kgValue as Numeric;                      // Watt / kg
+    hidden var mTime as Numeric;                        // ElapsedTime in seconds
+    hidden var mSec as Numeric;                         // Time in seconds only at driving
+                                                        // Normalized Power NP
 
     hidden var bikeEquipWeight  as Numeric;
     hidden var cdA              as Numeric;
@@ -26,6 +29,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
     hidden var rollingDrag      as Numeric;
     hidden var ground           as Numeric;
     hidden var distance         as Numeric;
+    hidden var FTP              as Numeric;             // Tunctional Threshold Power
     hidden var version          as String;
 
     var startWatt = false;                              // Set Watt value at the beginning to avoid empty data field
@@ -42,6 +46,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var Pc = 0;                                         // Pc = Steigungswiderstand
     var Pm = 0;                                         // Pm = Mechanische Widerstand
     var k = 0;                                          // Steigung in %
+    var TSS = 0;                                        // Training Stress Score
+    var IF = 0;                                         // Intensitätsfaktor
 
     var empty = 0;
     var startPressure = 0;
@@ -59,11 +65,12 @@ class powerMTBView extends WatchUi.SimpleDataField {
     var fitField3 = null;
     var fitField4 = null;
     var fitField5 = null;
+    var fitField6 = null;
+    var fitField7 = null;
 
     // Set the label of the data field here.
     function initialize(app) {
         SimpleDataField.initialize();
-        //label = "Watt Ø";
         label = "Watt";
 
         sValue  = 0.00f;
@@ -72,6 +79,8 @@ class powerMTBView extends WatchUi.SimpleDataField {
         dValue  = 0.00f;
         avValue = 0.00f;
         kgValue = 0.00f;
+        mTime = 0;
+        mSec = 0;
 
         weightRider = app.getProperty("riderWeight_prop").toFloat();      // Weight Rider
         bikeEquipWeight = app.getProperty("bike_Equip_Weight").toFloat(); // Weight =  Bike + Equipment
@@ -80,6 +89,7 @@ class powerMTBView extends WatchUi.SimpleDataField {
         rollingDrag = app.getProperty("rollingDrag_prop").toFloat();      // Rolling friction coefficient Cr of the tire
         ground = app.getProperty("ground_prop").toNumber();               // Subsurface factor
         distance = app.getProperty("distance_prop").toNumber();           // Update Watt/distance in meter
+        FTP = app.getProperty("ftp_prop").toNumber();                     // Your FTP values
         version = app.getProperty("version_prop").toString();             // Update App Version
 
         Sys.println("DEBUG: Version: " + version);
@@ -143,11 +153,17 @@ class powerMTBView extends WatchUi.SimpleDataField {
     fitField3 = SimpleDataField.createField("Gradient", 2, Fit.DATA_TYPE_SINT16, {:mesgType=>Fit.MESG_TYPE_RECORD, :units=>"%"});
     fitField3.setData(0);  
 
-    fitField4 = SimpleDataField.createField("Watt Ø", 3, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField4 = SimpleDataField.createField("Watt/Ø", 3, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
     fitField4.setData(0.0);
 
-    fitField5 = SimpleDataField.createField("W/kg", 4, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField5 = SimpleDataField.createField("Watt/kg", 4, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
     fitField5.setData(0.0);
+
+    fitField6 = SimpleDataField.createField("Intensity Factor", 5, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField6.setData(0.0);
+
+    fitField7 = SimpleDataField.createField("Training Stress Score", 6, Fit.DATA_TYPE_FLOAT, {:mesgType=>Fit.MESG_TYPE_SESSION});
+    fitField7.setData(0.0);
     }
 
     // The given info object contains all the current workout
@@ -159,9 +175,18 @@ class powerMTBView extends WatchUi.SimpleDataField {
         // Speed in km/h
         if(info has :currentSpeed){
             if(info.currentSpeed != null){
-                sValue = info.currentSpeed as Number * 3.6; 
+                sValue = info.currentSpeed as Number * 3.6;
             } else {
                 sValue = 0.00f;
+            }
+        }
+
+        // Elapsed Time
+        if(info has :elapsedTime){
+            if(info.elapsedTime != null){
+                mTime = info.elapsedTime as Number / 1000;
+            } else {
+                mTime = 0;
             }
         }
 
@@ -241,6 +266,10 @@ class powerMTBView extends WatchUi.SimpleDataField {
                     // powerTotal = Pr + Pa + Pc + Pm
                     powerTotal = Pr + Pa + Pc + Pm;
 
+                    if (sValue > 0) {
+                        mSec = mSec + 1;    // Update Timer during driving
+                    }
+
                     if (sValue > 0 && updateStatus == true) { 
                         // add 0 because of average
                         if (powerTotal >= 0) {                                  // no negativ Watt values
@@ -267,14 +296,27 @@ class powerMTBView extends WatchUi.SimpleDataField {
                             Sys.println("Watt Ø: " + avValue.toNumber());
                             fitField5.setData(kgValue.toFloat());
                             Sys.println("Watt/kg: " + kgValue.toFloat());
+                            fitField6.setData(IF.toFloat());
+                            fitField7.setData(TSS.toFloat());
                         } else {
                             fitField1.setData(empty.toNumber()); 
                             fitField2.setData(empty.toNumber());
                             fitField3.setData(empty.toNumber()); 
                             fitField4.setData(empty.toNumber());
                             fitField5.setData(empty.toNumber());
+                            fitField6.setData(empty.toNumber());
+                            fitField7.setData(empty.toNumber());
                         }
 
+                        // New Calculation for TSS, IF and NP(avValue)
+                        IF = (avValue / FTP);
+                        TSS = (mSec * avValue * IF) / (FTP * 3600) * 100;
+                        
+                        Sys.println("Seconds: " + mSec.toFloat());
+                        //Sys.println("elaTime: " + mTime.toFloat());
+                        Sys.println("IF: " + IF.toFloat());
+                        Sys.println("TSS: " + TSS.toFloat());
+                        
                     }
                 }
             } else {

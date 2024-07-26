@@ -2,11 +2,13 @@
     <!--          settings in app default MTB          -->
     <property id="riderWeight_prop" type="float">80.0</property>
     <property id="bike_Equip_Weight" type="float">10.0</property>
+    <property id="ftp_prop" type="number">230</property>
     <property id="drag_prop" type="number">1</property>             
     <property id="airDensity_prop" type="float">1.225</property>
     <property id="rollingDrag_prop" type="float">26.5</property>
     <property id="ground_prop" type="number">2</property>
     <property id="distance_prop" type="number">10</property>
+
     <!--                    App Version                  -->
-    <property id="version_prop" type="string">1.1.7</property>
+    <property id="version_prop" type="string">1.2.0</property>
 </properties>

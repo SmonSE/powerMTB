@@ -1,0 +1,202 @@
+{
+  "settings" : [ {
+    "key" : "riderWeight_prop",
+    "valueType" : "float",
+    "defaultValue" : 80.0,
+    "configTitle" : "riderWeight_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "bike_Equip_Weight",
+    "valueType" : "float",
+    "defaultValue" : 10.0,
+    "configTitle" : "bike_Equip_Weight_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "ftp_prop",
+    "valueType" : "number",
+    "defaultValue" : 230,
+    "configTitle" : "ftp_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "drag_prop",
+    "valueType" : "number",
+    "defaultValue" : 1,
+    "configTitle" : "drag_title",
+    "configPrompt" : null,
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "drag_1",
+      "value" : 1
+    }, {
+      "display" : "drag_2",
+      "value" : 2
+    }, {
+      "display" : "drag_3",
+      "value" : 3
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "airDensity_prop",
+    "valueType" : "float",
+    "defaultValue" : 1.225,
+    "configTitle" : "airDensity_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "rollingDrag_prop",
+    "valueType" : "float",
+    "defaultValue" : 26.5,
+    "configTitle" : "rollingDrag_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "ground_prop",
+    "valueType" : "number",
+    "defaultValue" : 2,
+    "configTitle" : "ground_title",
+    "configPrompt" : null,
+    "configType" : "list",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : [ {
+      "display" : "ground_1",
+      "value" : 1
+    }, {
+      "display" : "ground_2",
+      "value" : 2
+    }, {
+      "display" : "ground_3",
+      "value" : 3
+    }, {
+      "display" : "ground_4",
+      "value" : 4
+    } ],
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "distance_prop",
+    "valueType" : "number",
+    "defaultValue" : 10,
+    "configTitle" : "distance_title",
+    "configPrompt" : null,
+    "configType" : "numeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : false,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  }, {
+    "key" : "version_prop",
+    "valueType" : "string",
+    "defaultValue" : "1.2.0",
+    "configTitle" : "version_title",
+    "configPrompt" : null,
+    "configType" : "alphaNumeric",
+    "configError" : null,
+    "configHelpUrl" : null,
+    "configReadonly" : true,
+    "configRequired" : false,
+    "configOptions" : null,
+    "configMin" : null,
+    "configMax" : null,
+    "configMaxLength" : null
+  } ],
+  "supportsLiveValidation" : false,
+  "languages" : {
+    "valyrian" : {
+      "drag_title" : "Air Friction Coefficient",
+      "TSS_graph_label" : "TSS",
+      "ftp_title" : "Functional Threshold Power (FTP)",
+      "IF_graph_label" : "IF",
+      "rollingDrag_title" : "Rolling Resistance Tires W",
+      "AppName" : "powerMTB",
+      "ground_4" : "Muddy ground: 2.5",
+      "version_title" : "Version",
+      "ground_1" : "Asphalt floor: 1.0",
+      "wattP_units" : "W",
+      "ground_3" : "Forest ground: 2.0",
+      "watt_label" : "W",
+      "watt_units" : "W",
+      "ground_2" : "Gravel path: 1.5",
+      "avValue_graph_label" : "Power in Watt Ø",
+      "airDensity_title" : "Air density",
+      "wattP_label" : "Watt Ø",
+      "wattKg_label" : "Watt/kg",
+      "climbP_label" : "%",
+      "avValue_units" : "W",
+      "watt_graph_label" : "Power in Watt",
+      "IF_units" : "IF",
+      "wattKg_units" : "W/kg",
+      "distance_title" : "Update Interval in m",
+      "bike_Equip_Weight_title" : "Bike/Equipment Weight",
+      "riderWeight_title" : "Biker weight",
+      "drag_3" : "Enduro: 0.51",
+      "ground_title" : "Subsoil",
+      "wattKg_graph_label" : "W/kg",
+      "IF_label" : "IF",
+      "climbP_graph_label" : "Climb in %",
+      "avValue_label" : "W",
+      "wattP_graph_label" : "W",
+      "climbP_units" : "%",
+      "TSS_label" : "TSS",
+      "drag_1" : "CrossCountry: 0.40",
+      "TSS_units" : "TSS",
+      "drag_2" : "All-Mountain: 0.44"
+    }
+  }
+}

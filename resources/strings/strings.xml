@@ -21,9 +21,19 @@
     <string id="wattKg_graph_label">W/kg</string>
     <string id="wattKg_units">W/kg</string> 
     <!--                                            -->
-    <string id="bike_Equip_Weight_title">Bike/Equipment Weight</string>
-    <string id="airDensity_title">Air density</string>
+    <string id="IF_label">IF</string>
+    <string id="IF_graph_label">IF</string>
+    <string id="IF_units">IF</string> 
+    <!--                                            -->
+    <string id="TSS_label">TSS</string>
+    <string id="TSS_graph_label">TSS</string>
+    <string id="TSS_units">TSS</string> 
+    <!--                                            -->
     <string id="riderWeight_title">Biker weight</string>
+    <string id="bike_Equip_Weight_title">Bike + Equipment Weight</string>
+    <string id="ftp_title">Functional Threshold Power (FTP)</string>
+    <string id="airDensity_title">Air density</string>
+
     <!--                                            -->
     <string id="drag_title">Air Friction Coefficient</string>
     <string id="drag_1">CrossCountry: 0.40</string>                 <!--  0.40  -->  

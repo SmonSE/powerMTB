@@ -1,0 +1,105 @@
+{
+  "datafields" : [ {
+    "id" : 0,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "watt_graph_label",
+    "label-key" : "watt_label",
+    "unit-label-key" : "watt_units",
+    "sort-order" : 0,
+    "precision" : 0,
+    "fill-color" : "rgba(0, 0, 255, 1.0)"
+  }, {
+    "id" : 1,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "avValue_graph_label",
+    "label-key" : "avValue_label",
+    "unit-label-key" : "avValue_units",
+    "sort-order" : 1,
+    "precision" : 0,
+    "fill-color" : "rgba(255, 0, 0, 1.0)"
+  }, {
+    "id" : 2,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "climbP_graph_label",
+    "label-key" : "climbP_label",
+    "unit-label-key" : "climbP_units",
+    "sort-order" : 2,
+    "precision" : 1,
+    "fill-color" : "rgba(0, 255, 0, 1.0)"
+  }, {
+    "id" : 3,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "wattP_graph_label",
+    "label-key" : "wattP_label",
+    "unit-label-key" : "wattP_units",
+    "sort-order" : 3,
+    "precision" : 0,
+    "fill-color" : "rgba(0, 0, 255, 1.0)"
+  }, {
+    "id" : 4,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "wattKg_graph_label",
+    "label-key" : "wattKg_label",
+    "unit-label-key" : "wattKg_units",
+    "sort-order" : 4,
+    "precision" : 1,
+    "fill-color" : "rgba(0, 0, 255, 1.0)"
+  }, {
+    "id" : 5,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "IF_graph_label",
+    "label-key" : "IF_label",
+    "unit-label-key" : "IF_units",
+    "sort-order" : 5,
+    "precision" : 1,
+    "fill-color" : "rgba(0, 0, 255, 1.0)"
+  }, {
+    "id" : 6,
+    "chart-visible" : true,
+    "activity-visible" : false,
+    "lap-visible" : false,
+    "chart-title-key" : "TSS_graph_label",
+    "label-key" : "TSS_label",
+    "unit-label-key" : "TSS_units",
+    "sort-order" : 6,
+    "precision" : 1,
+    "fill-color" : "rgba(0, 0, 255, 1.0)"
+  } ],
+  "strings" : {
+    "default" : {
+      "watt_graph_label" : "Power in Watt",
+      "watt_label" : "W",
+      "watt_units" : "W",
+      "avValue_graph_label" : "Power in Watt Ø",
+      "avValue_label" : "W",
+      "avValue_units" : "W",
+      "climbP_graph_label" : "Climb in %",
+      "climbP_label" : "%",
+      "climbP_units" : "%",
+      "wattP_graph_label" : "W",
+      "wattP_label" : "Watt Ø",
+      "wattP_units" : "W",
+      "wattKg_graph_label" : "W/kg",
+      "wattKg_label" : "Watt/kg",
+      "wattKg_units" : "W/kg",
+      "IF_graph_label" : "IF",
+      "IF_label" : "IF",
+      "IF_units" : "IF",
+      "TSS_graph_label" : "TSS",
+      "TSS_label" : "TSS",
+      "TSS_units" : "TSS"
+    }
+  }
+}

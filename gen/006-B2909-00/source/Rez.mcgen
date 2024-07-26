@@ -1,0 +1,52 @@
+import Toybox.Lang;
+using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.Graphics;
+using Toybox.Graphics as Gfx;
+
+module Rez {
+    module Drawables {
+        (:initialized) var LauncherIcon as ResourceId;
+    } // Drawables
+
+    module Strings {
+        (:initialized) var drag_title as ResourceId;
+        (:initialized) var TSS_graph_label as ResourceId;
+        (:initialized) var ftp_title as ResourceId;
+        (:initialized) var IF_graph_label as ResourceId;
+        (:initialized) var rollingDrag_title as ResourceId;
+        (:initialized) var AppName as ResourceId;
+        (:initialized) var ground_4 as ResourceId;
+        (:initialized) var version_title as ResourceId;
+        (:initialized) var ground_1 as ResourceId;
+        (:initialized) var wattP_units as ResourceId;
+        (:initialized) var ground_3 as ResourceId;
+        (:initialized) var watt_label as ResourceId;
+        (:initialized) var watt_units as ResourceId;
+        (:initialized) var ground_2 as ResourceId;
+        (:initialized) var avValue_graph_label as ResourceId;
+        (:initialized) var airDensity_title as ResourceId;
+        (:initialized) var wattP_label as ResourceId;
+        (:initialized) var wattKg_label as ResourceId;
+        (:initialized) var climbP_label as ResourceId;
+        (:initialized) var avValue_units as ResourceId;
+        (:initialized) var watt_graph_label as ResourceId;
+        (:initialized) var IF_units as ResourceId;
+        (:initialized) var wattKg_units as ResourceId;
+        (:initialized) var distance_title as ResourceId;
+        (:initialized) var bike_Equip_Weight_title as ResourceId;
+        (:initialized) var riderWeight_title as ResourceId;
+        (:initialized) var drag_3 as ResourceId;
+        (:initialized) var ground_title as ResourceId;
+        (:initialized) var wattKg_graph_label as ResourceId;
+        (:initialized) var IF_label as ResourceId;
+        (:initialized) var climbP_graph_label as ResourceId;
+        (:initialized) var avValue_label as ResourceId;
+        (:initialized) var wattP_graph_label as ResourceId;
+        (:initialized) var climbP_units as ResourceId;
+        (:initialized) var TSS_label as ResourceId;
+        (:initialized) var drag_1 as ResourceId;
+        (:initialized) var TSS_units as ResourceId;
+        (:initialized) var drag_2 as ResourceId;
+    } // Strings
+} // Rez
