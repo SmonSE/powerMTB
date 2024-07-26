@@ -183,7 +183,7 @@
       "IF_units" : "IF",
       "wattKg_units" : "W/kg",
       "distance_title" : "Update Interval in m",
-      "bike_Equip_Weight_title" : "Bike/Equipment Weight",
+      "bike_Equip_Weight_title" : "Bike + Equipment Weight",
       "riderWeight_title" : "Biker weight",
       "drag_3" : "Enduro: 0.51",
       "ground_title" : "Subsoil",
